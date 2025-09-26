@@ -3,14 +3,17 @@
 import { ToastContainer } from "react-toastify";
 import ScrollToTop from "@/components/common/ScrollToTop";
 import ErrorBoundary from "@/ui/ErrorBoundary";
+import { SearchProvider } from "@/contexts/SearchContext";
 
 const Wrapper = ({ children }: any) => {
 
     return (
         <ErrorBoundary>
-            {children}
-            <ScrollToTop />
-            <ToastContainer position="top-center" />
+            <SearchProvider>
+                {children}
+                <ScrollToTop />
+                <ToastContainer position="top-center" />
+            </SearchProvider>
         </ErrorBoundary>
     )
 }

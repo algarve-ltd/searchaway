@@ -1,5 +1,5 @@
-import HomeFive from "@/components/homes/home-five";
 import HomeOne from "@/components/homes/home-one";
+import HomeThree from "@/components/homes/home-three";
 import Wrapper from "@/layouts/Wrapper";
 
 export const metadata = {
@@ -8,7 +8,7 @@ export const metadata = {
 const page = () => {
   return (
     <Wrapper>
-      <HomeFive />
+      <HomeThree />
     </Wrapper>
   )
 }
