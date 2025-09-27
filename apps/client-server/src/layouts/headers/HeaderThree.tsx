@@ -24,23 +24,25 @@ const HeaderThree = () => {
    return (
       <>
          <header className="tg-header-height">
-            <div className={`tg-header__area tg-header-lg-space z-index-999 tg-transparent ${sticky ? "header-sticky" : ""}`} id="header-sticky">
+            <div className={`tg-header__area tg-header-lg-space z-index-999 tg-transparent`} id="header-sticky">
                <div className="container-fluid container-1860">
                   <div className="row align-items-center">
-                     <div className="col-lg-7 col-5">
-                        <div className="tgmenu__wrap d-flex align-items-center">
+                     {/* <div className="col-lg-7 col-5"> */}
+                     <div className="col-12 d-flex justify-content-center">
+                        <div className="tgmenu__wrap d-flex align-items-center justify-content-center w-100 pt-20 pb-20">
                            <div className="logo">
                               <Link className="logo-1" href="/"><Image src={logo_1} alt="Logo" /></Link>
-                              <Link className="logo-2 d-none" href="/"><Image src={logo_2} alt="Logo" /></Link>
+                              {/* <Link className="logo-2 d-none" href="/"><Image src={logo_2} alt="Logo" /></Link> */}
                            </div>
-                           <nav className="tgmenu__nav tgmenu-1-space ml-180">
-                              <div className="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
-                                 <NavMenu />
-                              </div>
-                           </nav>
+                           {/* <nav className="tgmenu__nav tgmenu-1-space ml-180">
+                                 <div className="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
+                                    <NavMenu />
+                                 </div>
+                              </nav> */}
                         </div>
                      </div>
-                     <div className="col-lg-5 col-7">
+                     {/* </div> */}
+                     {/* <div className="col-lg-5 col-7">
                         <div className="tg-menu-right-action d-flex align-items-center justify-content-end">
                            <div className="tg-header-contact-info d-flex align-items-center">
                               <span className="tg-header-contact-icon mr-5 d-none d-xl-block">
@@ -83,7 +85,7 @@ const HeaderThree = () => {
                               </button>
                            </div>
                         </div>
-                     </div>
+                     </div> */}
                   </div>
                </div>
             </div>

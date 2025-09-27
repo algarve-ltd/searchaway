@@ -21,14 +21,10 @@ const HomeThree = () => {
          <main>
             <Banner />
             <BannerFormThree />
-            <About />
             <Listing />
-            <Choose />
-            <CtaThree />
-            <Location />
-            <CtaTwo />
-            <Testimonial />
-            <Blog />
+            {/* <CtaThree /> */}
+            {/* <Location /> */}
+            {/* <Blog /> */}
             <Cta />
          </main>
          <FooterThree />

@@ -63,11 +63,6 @@ const Banner = () => {
                                  <span className="night">/night</span>
                               </div>
                            </div>
-                           <div className="tg-hero-btn-box  wow fadeInUp" data-wow-delay=".8s" data-wow-duration="1.5s">
-                              <Link href="/contact" className="tg-btn tg-btn-switch-animation">
-                                 <Button text="Take a Tour" />
-                              </Link>
-                           </div>
                         </div>
                      </div>
                   </div>

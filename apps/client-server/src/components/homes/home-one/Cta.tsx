@@ -7,7 +7,7 @@ import icon_2 from "@/assets/img/cta/app.png"
 
 const Cta = () => {
    return (
-      <div className="tg-cta-area tg-cta-su-wrapper tg-cta-space z-index-9 p-relative">
+      <div className="tg-cta-area tg-cta-su-wrapper tg-cta-space z-index-9 p-relative pt-150">
          <div className="container">
             <div className="row">
                <div className="col-12">

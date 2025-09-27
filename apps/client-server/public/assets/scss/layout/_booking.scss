@@ -4,40 +4,47 @@
     	05. booking
 ===============================*/
 
-.tg-booking{
-    &-form{
-        &-input{
-            &-group{
+.tg-booking {
+    &-form {
+        &-input {
+            &-group {
                 flex-wrap: wrap;
+
                 @media #{$lg,$md,$sm,$xs} {
-                    justify-content: flex-start!important;
+                    justify-content: flex-start !important;
                 }
             }
         }
-        &-space{
-            margin-top: -60px;
+
+        &-space {
+            margin-bottom: 20px;
+            margin-top: -220px;
             position: relative;
             z-index: 9;
         }
-        &-wrap{
+
+        &-wrap {
             box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
             background: var(--tg-common-white);
             border: 1px solid #e1e1e1;
             border-radius: 15px;
             padding: 20px 40px 25px 40px;
+
             @media #{$xs} {
                 padding: 20px 30px 25px 30px;
             }
         }
-        &-title{
+
+        &-title {
             font-weight: 500;
             font-size: 14px;
             text-transform: capitalize;
             color: var(--tg-grey-2);
             display: block;
         }
-        &-location{
-            &-list{
+
+        &-location {
+            &-list {
                 width: 220px;
                 box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
                 background: var(--tg-common-white);
@@ -51,21 +58,25 @@
                 position: absolute;
                 top: 100%;
                 left: 0;
-                &.tg-quantity{
+
+                &.tg-quantity {
                     width: 320px;
                     left: auto;
                     right: 0;
+
                     @media #{$xs} {
                         width: 285px;
                     }
-                    & ul{
-                        & li{
+
+                    & ul {
+                        & li {
                             display: flex;
                             justify-content: space-between;
                             align-items: center;
                         }
                     }
                 }
+
                 &.tg-list-open {
                     opacity: 1;
                     visibility: visible;
@@ -74,21 +85,25 @@
                     top: 100%;
                     z-index: 9;
                 }
-                & ul{
-                    & li{
+
+                & ul {
+                    & li {
                         padding: 10px 18px;
                         color: var(--tg-grey-4);
                         @include tg-transition();
                         border-radius: 10px;
                         cursor: pointer;
-                        &:hover{
+
+                        &:hover {
                             background: var(--tg-grey-3);
                         }
-                        & span{
+
+                        & span {
                             font-size: 14px;
                             margin-left: 5px;
                         }
-                        & i{
+
+                        & i {
                             width: 30px;
                             height: 30px;
                             text-align: center;
@@ -101,31 +116,37 @@
                 }
             }
         }
-        &-search{
-            &-btn{
+
+        &-search {
+            &-btn {
                 @media #{$xs} {
                     width: 100%;
                 }
-                & .bk-search-button{
+
+                & .bk-search-button {
                     background: var(--tg-theme-secondary);
                     font-weight: 600;
                     font-size: 15px;
                     color: var(--tg-common-white);
                     border-radius: 8px;
                     padding: 10px 70px;
+
                     @media #{$xl} {
                         padding: 10px 40px;
                     }
+
                     @media #{$xs} {
                         width: 100%;
                     }
                 }
             }
         }
-        &-tabs{
+
+        &-tabs {
             border-bottom: 2px solid var(--tg-border-1);
             margin-bottom: 14px;
-            & .borders{
+
+            & .borders {
                 background: var(--tg-theme-primary);
                 width: 0;
                 height: 2px;
@@ -134,9 +155,10 @@
                 right: 0;
                 position: absolute;
                 @include tg-transition();
-              }
-              & .nav-tab{
-                & button{
+            }
+
+            & .nav-tab {
+                & button {
                     font-weight: 500;
                     font-size: 15px;
                     text-transform: capitalize;
@@ -146,25 +168,30 @@
                     padding: 0 18px;
                     position: relative;
                     padding-bottom: 12px;
+
                     @media #{$sm,$xs} {
                         margin-bottom: 10px;
                     }
-                    &.active{
+
+                    &.active {
                         color: var(--tg-common-black);
-                        & .borders{
+
+                        & .borders {
                             width: 100%;
                             left: 0;
                             right: auto;
                         }
                     }
-                    & .icon{
+
+                    & .icon {
                         transform: translateY(-1px);
                         margin-right: 7px;
                     }
                 }
             }
         }
-        &-parent{
+
+        &-parent {
             &-inner {
                 @media #{$xs} {
                     width: 100%;
@@ -172,29 +199,34 @@
                 }
             }
         }
-        &-3{
+
+        &-3 {
             background: var(--tg-common-white);
             padding: 23px 30px 14px 30px;
             box-shadow: 10px 12px 0 0 #003a97;
             border-radius: 15px;
         }
-        &-grid{
+
+        &-grid {
             background: var(--tg-common-white);
             border: 1px solid #e1e1e1;
             border-radius: 15px;
             padding: 30px 40px 23px 40px;
-            &-space{
+
+            &-space {
                 margin-top: -90px;
                 position: relative;
                 z-index: 2;
             }
         }
     }
-    &-quantity{
-        &-item{
+
+    &-quantity {
+        &-item {
             width: 130px;
             position: relative;
-            & .tg-quantity-input{
+
+            & .tg-quantity-input {
                 height: 44px;
                 text-align: center;
                 font-size: 14px;
@@ -204,7 +236,8 @@
                 width: 100%;
                 border-radius: 6px;
             }
-            & span{
+
+            & span {
                 width: 35px;
                 height: 34px;
                 line-height: 34px;
@@ -221,8 +254,9 @@
                 -o-transform: translateY(-50%);
                 transform: translateY(-50%);
                 transition: all .4s ease;
-                margin: 0 3px!important;
-                &::before{
+                margin: 0 3px !important;
+
+                &::before {
                     position: absolute;
                     content: "";
                     width: 1px;
@@ -236,10 +270,12 @@
                     left: 0;
                     background-color: #e1e1e1;
                 }
-                &.decrement{
+
+                &.decrement {
                     right: auto;
                     left: 0;
-                    &::before{
+
+                    &::before {
                         left: auto;
                         right: 0;
                     }
@@ -247,14 +283,16 @@
             }
         }
     }
-    &-title{
-        &-value{
+
+    &-title {
+        &-value {
             margin-right: 10px;
         }
     }
-    &-add{
-        &-input{
-            &-field{
+
+    &-add {
+        &-input {
+            &-field {
                 background: var(--tg-grey-3);
                 border-radius: 8px;
                 padding: 9px 17px;
@@ -263,16 +301,20 @@
                 justify-content: space-between;
                 cursor: pointer;
                 position: relative;
+
                 @media #{$xl, $sm} {
                     width: 200px;
                 }
+
                 @media #{$xs} {
                     width: 100%;
                 }
-                & span{
+
+                & span {
                     font-size: 13px;
                     color: var(--tg-grey-4);
-                    &.location{
+
+                    &.location {
                         position: absolute;
                         right: 14px;
                         top: 50%;
@@ -280,8 +322,9 @@
                     }
                 }
             }
-            &-date{
-                & .input{
+
+            &-date {
+                & .input {
                     display: inline-block;
                     background: var(--tg-grey-3);
                     border-radius: 8px;
@@ -293,18 +336,22 @@
                     font-size: 13px;
                     height: 46px;
                     color: var(--tg-grey-4);
+
                     @media #{$xl,$sm} {
                         width: 200px;
                     }
+
                     @media #{$xs} {
                         width: 100%;
                     }
-                    &::placeholder{
+
+                    &::placeholder {
                         font-size: 13px;
                         color: var(--tg-grey-4);
                     }
                 }
-                & span{
+
+                & span {
                     position: absolute;
                     top: 50%;
                     transform: translateY(-50%);
@@ -313,31 +360,36 @@
             }
         }
     }
-    &-4{
-        &-shape{
+
+    &-4 {
+        &-shape {
             position: absolute;
             bottom: 0;
             left: 97px;
             z-index: -1;
             width: 5%;
+
             @media #{$xl,$lg,$md,$sm,$xs} {
                 left: 0;
             }
-            &-2{
+
+            &-2 {
                 position: absolute;
                 bottom: 0;
                 right: 85px;
                 z-index: -1;
                 width: 9%;
+
                 @media #{$xl,$lg,$md,$sm,$xs} {
                     right: 0;
                 }
             }
         }
     }
-    &-5{
-        &-form{
-            &-item{
+
+    &-5 {
+        &-form {
+            &-item {
                 backdrop-filter: blur(20px);
                 box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.1);
                 background: linear-gradient(90deg, rgb(255 255 255 / 24%) 0%, rgb(255 255 255 / 11%) 100%);
@@ -346,48 +398,58 @@
                 padding: 20px 30px 14px 30px;
                 margin-right: 10px;
                 margin-left: 10px;
+
                 & .tg-booking-form-title {
                     color: var(--tg-common-white);
                 }
+
                 & .tg-booking-form-search-btn .bk-search-button {
                     background: var(--tg-theme-primary);
                 }
             }
         }
     }
-    &-tu{
-        &-wrapper{
+
+    &-tu {
+        &-wrapper {
             background: var(--tg-common-white);
             text-align: left;
             padding: 13px 14px 3px 26px;
             border-radius: 1000px;
+
             @media #{$md,$sm,$xs} {
                 border-radius: 10px;
             }
+
             @media #{$xs} {
-                padding: 20px 20px 20px 20px;  
+                padding: 20px 20px 20px 20px;
             }
+
             & .tg-booking-add-input-field {
                 justify-content: left;
             }
+
             & .tg-booking-add-input-field span.location {
                 right: auto;
                 left: 0;
                 color: var(--tg-common-black);
             }
+
             & .tg-booking-title-value {
                 margin-left: 16px;
                 margin-right: 20px;
                 color: var(--tg-common-black);
                 font-family: var(--tg-ff-outfit);
-                font-size: 16px!important;
+                font-size: 16px !important;
             }
+
             & .tg-booking-add-input-field {
-                padding:0;
+                padding: 0;
                 width: auto;
                 background: transparent;
                 padding-left: 5px;
             }
+
             & .tg-booking-add-input-date .input {
                 width: 141px;
                 padding: 0;
@@ -395,46 +457,55 @@
                 padding-left: 24px;
                 color: #353844;
                 font-family: var(--tg-ff-outfit);
-                font-size: 16px!important;
+                font-size: 16px !important;
                 height: 22px;
-                &::placeholder{
+
+                &::placeholder {
                     color: #353844;
                     font-family: var(--tg-ff-outfit);
-                    font-size: 16px!important;
+                    font-size: 16px !important;
                 }
             }
+
             & .tg-booking-add-input-date span {
                 right: auto;
                 left: 0;
                 color: #353844;
-                &.angle-down{
+
+                &.angle-down {
                     right: 0;
                     left: auto;
                     top: 57%;
+
                     @media #{$xs} {
                         right: -10px;
                     }
                 }
             }
+
             & .tg-booking-form-title {
                 line-height: 1;
                 margin-left: 23px;
                 color: #7e8395;
                 font-size: 14px;
             }
+
             & .tg-booking-form-search-btn .bk-search-button {
                 padding: 9px 32px;
                 border-radius: 100px;
                 background: var(--tg-theme-primary);
             }
+
             & .tg-booking-form-search-btn .bk-search-button-2 {
                 border-radius: 8px;
             }
+
             & .tg-booking-form-input-group {
                 @media #{$lg} {
                     justify-content: space-between !important;
                 }
             }
+
             & .tg-booking-add-input-date {
                 @media #{$xs} {
                     display: inline-block;

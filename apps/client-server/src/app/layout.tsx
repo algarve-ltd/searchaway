@@ -3,6 +3,7 @@ import "../styles/index.css";
 import "../../public/assets/scss/main.scss";
 import { Provider } from "react-redux";
 import store from "@/redux/store";
+import { SearchProvider } from "@/contexts/SearchContext";
 
 export default function RootLayout({
   children,
@@ -25,7 +26,9 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning={true}>
         <Provider store={store}>
-          {children}
+          <SearchProvider>
+            {children}
+          </SearchProvider>
         </Provider>
       </body>
     </html>

@@ -31,11 +31,6 @@ const About = () => {
                            solo journey to explore the world, a travel agency can provide
                            tailored itinerary that exceeds your expectations.</p>
                      </div>
-                     <div className="tp-about-btn-wrap wow fadeInUp" data-wow-delay=".7s" data-wow-duration=".9s">
-                        <Link href="/tour-details" className="tg-btn tg-btn-transparent tg-btn-switch-animation">
-                           <Button text="Take a Tour" />
-                        </Link>
-                     </div>
                   </div>
                </div>
                <div className="col-lg-3">
