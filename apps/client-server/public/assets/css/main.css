@@ -3765,7 +3765,6 @@ only screen and (min-width: 576px) and (max-width: 767px),
   font-weight: 700;
   font-size: 64px;
   color: var(--tg-common-white);
-  border-bottom: 4px solid var(--tg-common-white);
   display: inline-block;
 }
 
@@ -8882,9 +8881,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
 }
 
 .tg-footer-info ul li {
-  text-transform: capitalize;
   color: #acadb5;
-  display: inline-block;
   font-weight: 500;
   padding: 10px 0px;
 }
