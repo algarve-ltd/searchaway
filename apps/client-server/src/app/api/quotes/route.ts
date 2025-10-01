@@ -7,7 +7,7 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
 
     // Forward all search parameters to the Quote Away API
-    const quoteAwayBaseUrl = process.env.QUOTE_AWAY_API_URL || 'http://localhost:3002';
+    const quoteAwayBaseUrl = process.env.QUOTE_AWAY_API_URL;
     const quoteAwayUrl = new URL(`${quoteAwayBaseUrl}/api/public/quotes`);
 
     // Copy all search parameters from the request

@@ -1,13 +1,13 @@
-import About from "@/components/pages/about";
+import Terms from "@/components/pages/terms";
 import Wrapper from "@/layouts/Wrapper";
 
 export const metadata = {
-  title: "About Tourex - Tour & Travel Booking React Next js Template",
+  title: "Terms and Conditions - SearchAway",
 };
 const page = () => {
   return (
     <Wrapper>
-      <About />
+      <Terms />
     </Wrapper>
   )
 }
