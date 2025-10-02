@@ -42,12 +42,11 @@ export interface Quote {
 }
 
 export interface QuoteApiResponse {
-  quotes: Quote[];
-  pagination: {
+  data: Quote[];
+  meta: {
     currentPage: number;
     totalPages: number;
     limit: number;
-    totalQuotes: number;
-    hasMore: boolean;
+    total: number;
   };
 }

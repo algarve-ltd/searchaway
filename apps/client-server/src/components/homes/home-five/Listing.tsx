@@ -37,7 +37,7 @@ const Listing = () => {
             }
 
             const data: QuoteApiResponse = await response.json();
-            setQuotes(data.quotes);
+            setQuotes(data.data);
          } catch (err) {
             console.error('Error fetching quotes:', err);
             setError(err instanceof Error ? err.message : 'Failed to fetch quotes');

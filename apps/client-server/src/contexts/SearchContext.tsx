@@ -101,19 +101,17 @@ export const SearchProvider: React.FC<SearchProviderProps> = ({ children }) => {
       const data: QuoteApiResponse = await response.json();
 
       if (append) {
-        setQuotes(prev => [...prev, ...data.quotes]);
+        setQuotes(prev => [...prev, ...data.data]);
       } else {
-        setQuotes(data.quotes);
+        setQuotes(data.data);
       }
-
+      
       setPagination({
-        currentPage: data.pagination.currentPage,
-        totalPages: data.pagination.totalPages,
-        totalQuotes: data.pagination.totalQuotes,
-        hasMore: data.pagination.hasMore
-      });
-
-    } catch (err) {
+        currentPage: data.meta.currentPage,
+        totalPages: data.meta.totalPages,
+        totalQuotes: data.meta.total,
+        hasMore: data.meta.currentPage < data.meta.totalPages
+      });    } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred');
     } finally {
       setLoading(false);
