@@ -110,6 +110,8 @@ const Listing = () => {
       }
    }, [quotes]);
 
+
+
    useEffect(() => {
       if (typeof window !== "undefined" && transformedQuotes.length > 0) {
          isotope.current = new Isotope(".isotope-wrapper", {
@@ -137,13 +139,17 @@ const Listing = () => {
    const handleFilterKeyChange = (key: string) => () => {
       setFilterKey(key);
       setSelectedFilter(key);
-      // Update search context with category filter
-      updateFilters({ category: key === "*" ? "" : key });
+      // Update search context with holiday type filter
+      updateFilters({ holidayType: key === "*" ? "" : key });
    };
 
    const handleLoadMore = async () => {
       if (pagination.hasMore && !loading) {
-         await loadMore();
+         try {
+            await loadMore();
+         } catch (error) {
+            console.error('Load More error:', error);
+         }
       }
    };
 
@@ -197,13 +203,26 @@ const Listing = () => {
                </div>
             )}
 
+            {/* Quote Counter */}
+            {transformedQuotes.length > 0 && (
+               <div className="row mb-4">
+                  <div className="col-12">
+                     <div className="text-center">
+                        <p className="mb-0">
+                           Showing <strong>{transformedQuotes.length}</strong> of <strong>{pagination.total}</strong> available quotes
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            )}
+
             <div className="row isotope-wrapper project-active-two">
                {transformedQuotes
                   .map((item) => (
                      <div key={item.id} className={`col-xxl-3 col-xl-4 col-lg-4 col-md-6 grid-item grid-sizer ${item.category?.replace(/\s+/g, '-')} isotope-filter-item mb-4`}>
-                        <div className="tg-listing-card-item">
-                           <div className="tg-listing-card-thumb fix mb-15">
-                              <Link href="/tour-details">
+                        <Link href={`https://app.quoteawayai.com/quote/${item.quoteNumber}`} target="_blank" rel="noopener noreferrer" className="d-block text-decoration-none">
+                           <div className="tg-listing-card-item h-100">
+                              <div className="tg-listing-card-thumb fix mb-15">
                                  <Image
                                     className="tg-card-border w-100"
                                     src={typeof item.thumb === 'string' ? item.thumb : item.thumb}
@@ -212,10 +231,9 @@ const Listing = () => {
                                     height={200}
                                  />
                                  {item.tag && <span className="tg-listing-item-price-discount shape">{item.tag}</span>}
-                              </Link>
-                           </div>
-                           <div className="tg-listing-card-content">
-                              <h4 className="tg-listing-card-title"><Link href="/tour-details">{item.title}</Link></h4>
+                              </div>
+                              <div className="tg-listing-card-content">
+                                 <h4 className="tg-listing-card-title text-dark">{item.title}</h4>
                               <div className="tg-listing-card-duration-tour">
                                  <span className="tg-listing-card-duration-map mb-5">
                                     <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -278,6 +296,7 @@ const Listing = () => {
                               )}
                            </div>
                         </div>
+                        </Link>
                      </div>
                   ))}
             </div>
@@ -286,21 +305,46 @@ const Listing = () => {
             {pagination.hasMore && (
                <div className="row">
                   <div className="col-12">
-                     <div className="text-center mt-40">
+                     <div className="text-center mt-40" style={{ zIndex: 1000, position: 'relative' }}>
                         <button
-                           className="tg-btn btn-secondary"
+                           className="tg-btn tg-btn-primary"
                            onClick={handleLoadMore}
                            disabled={loading}
+                           style={{ 
+                              padding: '12px 30px',
+                              fontSize: '16px',
+                              cursor: loading ? 'not-allowed' : 'pointer',
+                              zIndex: 1001,
+                              position: 'relative'
+                           }}
                         >
                            {loading ? (
                               <>
                                  <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-                                 Loading...
+                                 Loading more quotes...
                               </>
                            ) : (
-                              'Load More'
+                              <>Load More Quotes ({pagination.total - transformedQuotes.length} remaining)</>
                            )}
                         </button>
+                        <div className="mt-2">
+                           <small className="text-muted">
+                              Page {pagination.currentPage} of {pagination.totalPages}
+                           </small>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            )}
+
+            {/* Show message when all quotes are loaded */}
+            {!pagination.hasMore && transformedQuotes.length > 0 && (
+               <div className="row">
+                  <div className="col-12">
+                     <div className="text-center mt-40">
+                        <p className="text-muted">
+                           You've viewed all {pagination.total} available quotes
+                        </p>
                      </div>
                   </div>
                </div>
