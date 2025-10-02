@@ -24,12 +24,12 @@ const AboutArea = () => {
             {/* Content sections with boxed background */}
             <div className="tg-grey-bg rounded-15 p-60 mb-80">
                {/* Our Mission Section */}
-               <div className="row mb-80" style={{paddingTop: '50px'}}>
+               <div className="row mb-80" style={{ paddingTop: '50px' }}>
                   <div className="col-lg-8 mx-auto text-center">
                      <h2 className="mb-25 wow fadeInUp" data-wow-delay=".3s">Our Mission</h2>
                      <p className="mb-30 wow fadeInUp" data-wow-delay=".4s">
-                        Our mission is simple: to connect travellers with holidays created by trusted, independent UK travel experts. 
-                        We want to cut through the noise of online search engines and give you access to offers that are genuine, 
+                        Our mission is simple: to connect travellers with holidays created by trusted, independent UK travel experts.
+                        We want to cut through the noise of online search engines and give you access to offers that are genuine,
                         reliable, and designed with care.
                      </p>
                      <div className="row">
@@ -59,25 +59,25 @@ const AboutArea = () => {
                      <div className="tg-about-content">
                         <h2 className="mb-25 wow fadeInUp" data-wow-delay=".3s">Who We Are</h2>
                         <p className="mb-20 wow fadeInUp" data-wow-delay=".4s">
-                           At SearchAway, we partner exclusively with independent UK travel advisors who use their expertise, 
+                           At SearchAway, we partner exclusively with independent UK travel advisors who use their expertise,
                            industry contacts, and personal insight to source holidays that genuinely stand out.
                         </p>
                         <p className="mb-0 wow fadeInUp" data-wow-delay=".5s">
-                           Every trip you&apos;ll find on SearchAway started life as a real quote for a real traveller. We bring 
-                           these offers together in one easy-to-use platform so you can browse, compare, and book holidays 
+                           Every trip you&apos;ll find on SearchAway started life as a real quote for a real traveller. We bring
+                           these offers together in one easy-to-use platform so you can browse, compare, and book holidays
                            with confidence.
                         </p>
                      </div>
                   </div>
                   <div className="col-lg-6 mb-30">
                      <div className="tg-about-thumb-wrap">
-                        <Image 
-                           className="w-100 rounded-15" 
-                           src="/assets/img/about/travel-advisors-at-work.jpg" 
+                        <Image
+                           className="w-100 rounded-15"
+                           src="/assets/img/about/travel-advisors-at-work.jpg"
                            alt="Travel Advisors at Work"
                            width={500}
                            height={300}
-                           style={{objectFit: 'cover'}}
+                           style={{ objectFit: 'cover' }}
                         />
                      </div>
                   </div>
@@ -89,7 +89,7 @@ const AboutArea = () => {
                      <div className="tg-about-content">
                         <h2 className="mb-25 wow fadeInUp" data-wow-delay=".3s">Why We&apos;re Different</h2>
                         <p className="mb-25 wow fadeInUp" data-wow-delay=".4s">
-                           Unlike many holiday search sites that rely on automated feeds or generic mass-market deals, 
+                           Unlike many holiday search sites that rely on automated feeds or generic mass-market deals,
                            SearchAway is powered by people.
                         </p>
                         <div className="wow fadeInUp" data-wow-delay=".5s">
@@ -110,46 +110,46 @@ const AboutArea = () => {
                   </div>
                   <div className="col-lg-6 mb-30 order-lg-1">
                      <div className="tg-about-thumb-wrap">
-                        <Image 
-                           className="w-100 rounded-15" 
-                           src="/assets/img/about/personal-service.jpg" 
+                        <Image
+                           className="w-100 rounded-15"
+                           src="/assets/img/about/personal-service.jpg"
                            alt="Personal Service Illustration"
                            width={500}
                            height={350}
-                           style={{objectFit: 'cover'}}
+                           style={{ objectFit: 'cover' }}
                         />
                      </div>
                   </div>
                </div>
 
                {/* Supporting Independent Advisors Section */}
-               <div className="row align-items-center" style={{paddingBottom: '40px'}}>
+               <div className="row align-items-center" style={{ paddingBottom: '40px' }}>
                   <div className="col-lg-6 mb-30">
                      <div className="tg-about-content">
                         <h2 className="mb-25 wow fadeInUp" data-wow-delay=".3s">Supporting Independent Advisors</h2>
                         <p className="mb-20 wow fadeInUp" data-wow-delay=".4s">
-                           When you book through SearchAway, you&apos;re not only securing a fantastic holiday — you&apos;re also 
+                           When you book through SearchAway, you&apos;re not only securing a fantastic holiday — you&apos;re also
                            supporting small, independent UK travel businesses.
                         </p>
                         <p className="mb-20 wow fadeInUp" data-wow-delay=".5s">
-                           Our advisors are part of the backbone of the travel industry, bringing decades of combined 
+                           Our advisors are part of the backbone of the travel industry, bringing decades of combined
                            experience and a personal passion for helping people travel better.
                         </p>
                         <p className="mb-0 wow fadeInUp" data-wow-delay=".6s">
-                           By choosing SearchAway, you&apos;re choosing to keep your booking in safe hands while helping 
+                           By choosing SearchAway, you&apos;re choosing to keep your booking in safe hands while helping
                            independent businesses thrive.
                         </p>
                      </div>
                   </div>
                   <div className="col-lg-6 mb-30">
                      <div className="tg-about-thumb-wrap">
-                        <Image 
-                           className="w-100 rounded-15" 
-                           src="/assets/img/about/independent-advisors.jpg" 
+                        <Image
+                           className="w-100 rounded-15"
+                           src="/assets/img/about/independent-advisors.jpg"
                            alt="Independent Travel Advisors"
                            width={500}
                            height={300}
-                           style={{objectFit: 'cover'}}
+                           style={{ objectFit: 'cover' }}
                         />
                      </div>
                   </div>
@@ -157,9 +157,9 @@ const AboutArea = () => {
             </div>
 
          </div>
-         
+
          {/* Book With Confidence Section */}
-         <div className="tg-banner-area tg-grey-bg mt-80 p-relative" style={{ 
+         <div className="tg-banner-area tg-grey-bg mt-80 p-relative" style={{
             backgroundImage: `url(/assets/img/banner/banner-4/banner-4.png)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
@@ -180,11 +180,11 @@ const AboutArea = () => {
                         <h5 className="tg-section-subtitle mb-20 wow fadeInUp" data-wow-delay=".4s" data-wow-duration=".9s">Trusted & Secure</h5>
                         <h2 className="tg-section-title-white mb-30 wow fadeInUp" data-wow-delay=".5s" data-wow-duration=".9s">Book With Confidence</h2>
                         <p className="text-white mb-20 wow fadeInUp" data-wow-delay=".6s" data-wow-duration=".9s">
-                           Every advisor working with SearchAway is a trusted professional with access to ABTA and ATOL-protected 
+                           Every advisor working with SearchAway is a trusted professional with access to ABTA and ATOL-protected
                            holidays through their partner agencies. That means your money and your travel plans are always secure.
                         </p>
                         <p className="text-white lead mb-0 wow fadeInUp" data-wow-delay=".7s" data-wow-duration=".9s">
-                           With SearchAway, you&apos;re not left on your own — you&apos;ve got the backing of a real expert, 
+                           With SearchAway, you&apos;re not left on your own — you&apos;ve got the backing of a real expert,
                            from first search to final booking.
                         </p>
                      </div>

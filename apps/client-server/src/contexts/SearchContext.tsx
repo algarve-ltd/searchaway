@@ -99,20 +99,20 @@ export const SearchProvider: React.FC<SearchProviderProps> = ({ children }) => {
       }
 
       const data: QuoteApiResponse = await response.json();
-      
+
       if (append) {
         setQuotes(prev => [...prev, ...data.quotes]);
       } else {
         setQuotes(data.quotes);
       }
-      
+
       setPagination({
         currentPage: data.pagination.currentPage,
         totalPages: data.pagination.totalPages,
         totalQuotes: data.pagination.totalQuotes,
         hasMore: data.pagination.hasMore
       });
-      
+
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred');
     } finally {
