@@ -6,8 +6,6 @@ import UseSticky from "@/hooks/UseSticky";
 import Offcanvas from "./Menu/Offcanvas";
 import Sidebar from "./Menu/Sidebar";
 
-import logo_1 from "@/assets/img/logo/logo-white.png";
-import logo_2 from "@/assets/img/logo/logo-green.png";
 import new_logo from "@/assets/img/logo/logo.png";
 
 const HeaderThree = () => {

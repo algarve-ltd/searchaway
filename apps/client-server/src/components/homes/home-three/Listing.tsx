@@ -332,7 +332,7 @@ const Listing = () => {
                   <div className="col-12">
                      <div className="text-center mt-40">
                         <p className="text-muted">
-                           You've viewed all {pagination.total} available quotes
+                           You&apos;ve viewed all {pagination.total} available quotes
                         </p>
                      </div>
                   </div>
