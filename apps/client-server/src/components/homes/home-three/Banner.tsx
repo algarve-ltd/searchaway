@@ -1,8 +1,6 @@
 "use client"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, EffectFade, Autoplay } from "swiper/modules";
-import Button from "@/components/common/Button"
-import Link from "next/link"
 
 const banner_thumb: string[] = [
    "/assets/img/hero/hero-1.jpg",

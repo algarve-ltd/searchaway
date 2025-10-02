@@ -23,7 +23,7 @@ const About = () => {
                         industry contacts, and personal insight to source holidays that genuinely stand out.
                      </p>
                      <p className="mb-0 wow fadeInUp" data-wow-delay=".5s">
-                        Every trip you'll find on SearchAway started life as a real quote for a real traveller. We bring
+                        Every trip you&apos;ll find on SearchAway started life as a real quote for a real traveller. We bring
                         these offers together in one easy-to-use platform so you can browse, compare, and book holidays
                         with confidence.
                      </p>
@@ -43,7 +43,7 @@ const About = () => {
             <div className="row align-items-center mb-80">
                <div className="col-lg-6 mb-30 order-lg-2">
                   <div className="tg-about-content">
-                     <h2 className="mb-25 wow fadeInUp" data-wow-delay=".3s">Why We're Different</h2>
+                     <h2 className="mb-25 wow fadeInUp" data-wow-delay=".3s">Why We&apos;re Different</h2>
                      <p className="mb-25 wow fadeInUp" data-wow-delay=".4s">
                         Unlike many holiday search sites that rely on automated feeds or generic mass-market deals,
                         SearchAway is powered by people.
@@ -80,7 +80,7 @@ const About = () => {
                   <div className="tg-about-content">
                      <h2 className="mb-25 wow fadeInUp" data-wow-delay=".3s">Supporting Independent Advisors</h2>
                      <p className="mb-20 wow fadeInUp" data-wow-delay=".4s">
-                        When you book through SearchAway, you're not only securing a fantastic holiday — you're also
+                        When you book through SearchAway, you&apos;re not only securing a fantastic holiday — you&apos;re also
                         supporting small, independent UK travel businesses.
                      </p>
                      <p className="mb-20 wow fadeInUp" data-wow-delay=".5s">
@@ -88,7 +88,7 @@ const About = () => {
                         experience and a personal passion for helping people travel better.
                      </p>
                      <p className="mb-0 wow fadeInUp" data-wow-delay=".6s">
-                        By choosing SearchAway, you're choosing to keep your booking in safe hands while helping
+                        By choosing SearchAway, you&apos;re choosing to keep your booking in safe hands while helping
                         independent businesses thrive.
                      </p>
                   </div>
@@ -115,7 +115,7 @@ const About = () => {
                   <div className="row">
                      <div className="col-lg-10 mx-auto">
                         <div className="bg-light rounded-15 p-30 wow fadeInUp" data-wow-delay=".5s">
-                           <h5 className="mb-20">With SearchAway, you'll always know that the holidays listed have been:</h5>
+                           <h5 className="mb-20">With SearchAway, you&apos;ll always know that the holidays listed have been:</h5>
                            <div className="row">
                               <div className="col-md-4 mb-15">
                                  <p className="mb-0">✔ Sourced by a UK-based travel professional</p>
@@ -143,7 +143,7 @@ const About = () => {
                         holidays through their partner agencies. That means your money and your travel plans are always secure.
                      </p>
                      <p className="mb-0 lead">
-                        With SearchAway, you're not left on your own — you've got the backing of a real expert,
+                        With SearchAway, you&apos;re not left on your own — you&apos;ve got the backing of a real expert,
                         from first search to final booking.
                      </p>
                   </div>

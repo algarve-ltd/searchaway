@@ -1,5 +1,5 @@
 "use client"
-import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+import React, { createContext, useContext, useState, ReactNode, useEffect, useCallback } from 'react';
 import { Quote, QuoteApiResponse } from '@/types/quote';
 
 export interface SearchFilters {
@@ -9,6 +9,8 @@ export interface SearchFilters {
   priceRange: string;
   departureDate: string;
   holidayType: string; // For holiday type filtering
+  country: string;
+  category: string;
 }
 
 interface SearchContextType {
@@ -19,7 +21,7 @@ interface SearchContextType {
   pagination: {
     currentPage: number;
     totalPages: number;
-    total: number;
+    totalQuotes: number;
     hasMore: boolean;
   };
   updateFilters: (newFilters: Partial<SearchFilters>) => void;
@@ -34,7 +36,9 @@ const defaultFilters: SearchFilters = {
   destination: '',
   priceRange: '',
   departureDate: '',
-  holidayType: ''
+  holidayType: '',
+  country: '',
+  category: ''
 };
 
 const SearchContext = createContext<SearchContextType | undefined>(undefined);
@@ -59,13 +63,13 @@ export const SearchProvider: React.FC<SearchProviderProps> = ({ children }) => {
   const [pagination, setPagination] = useState({
     currentPage: 1,
     totalPages: 0,
-    total: 0,
+    totalQuotes: 0,
     hasMore: false
   });
 
   const ITEMS_PER_PAGE = 8;
 
-  const buildQueryParams = (page: number = 1) => {
+  const buildQueryParams = useCallback((page: number = 1) => {
     const params = new URLSearchParams();
     params.append('page', page.toString());
     params.append('limit', ITEMS_PER_PAGE.toString());
@@ -76,11 +80,13 @@ export const SearchProvider: React.FC<SearchProviderProps> = ({ children }) => {
     if (filters.departureDate) params.append('departureDate', filters.departureDate);
     if (filters.destination) params.append('destination', filters.destination);
     if (filters.holidayType) params.append('holidayType', filters.holidayType);
+    if (filters.country) params.append('country', filters.country);
+    if (filters.category) params.append('category', filters.category);
 
     return params.toString();
-  };
+  }, [filters]);
 
-  const fetchQuotes = async (page: number = 1, append: boolean = false) => {
+  const fetchQuotes = useCallback(async (page: number = 1, append: boolean = false) => {
     try {
       setLoading(true);
       setError(null);
@@ -89,34 +95,34 @@ export const SearchProvider: React.FC<SearchProviderProps> = ({ children }) => {
       const response = await fetch(`/api/quotes?${queryString}`);
 
       if (!response.ok) {
-        throw new Error('Failed to fetch quotes');
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
 
       const data: QuoteApiResponse = await response.json();
-
+      
       if (append) {
-        setQuotes(prev => [...prev, ...(data.data || [])]);
+        setQuotes(prev => [...prev, ...data.quotes]);
       } else {
-        setQuotes(data.data || []);
+        setQuotes(data.quotes);
       }
-
+      
       setPagination({
-        currentPage: data.meta.currentPage,
-        totalPages: data.meta.totalPages,
-        total: data.meta.total,
-        hasMore: data.meta.currentPage < data.meta.totalPages
+        currentPage: data.pagination.currentPage,
+        totalPages: data.pagination.totalPages,
+        totalQuotes: data.pagination.totalQuotes,
+        hasMore: data.pagination.hasMore
       });
-
+      
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred');
     } finally {
       setLoading(false);
     }
-  };
+  }, [buildQueryParams]);
 
-  const searchQuotes = async () => {
+  const searchQuotes = useCallback(async () => {
     await fetchQuotes(1, false);
-  };
+  }, [fetchQuotes]);
 
   const loadMore = async () => {
     if (pagination.hasMore && !loading) {
@@ -134,7 +140,7 @@ export const SearchProvider: React.FC<SearchProviderProps> = ({ children }) => {
     setPagination({
       currentPage: 1,
       totalPages: 0,
-      total: 0,
+      totalQuotes: 0,
       hasMore: false
     });
   };
@@ -145,12 +151,12 @@ export const SearchProvider: React.FC<SearchProviderProps> = ({ children }) => {
     if (hasActiveFilters) {
       searchQuotes();
     }
-  }, [filters.nights, filters.people, filters.priceRange, filters.departureDate, filters.destination, filters.holidayType]);
+  }, [filters, searchQuotes]);
 
   // Load initial quotes on mount
   useEffect(() => {
     fetchQuotes(1, false);
-  }, []);
+  }, [fetchQuotes]);
 
   // All filtering is now handled server-side by the API
 

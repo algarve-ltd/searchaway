@@ -1,18 +1,11 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 import Image from "next/image";
 import { JSX, useEffect, useRef, useState } from "react";
 import Isotope from "isotope-layout";
 import Link from "next/link"
-import { useDispatch } from "react-redux"
-import { addToWishlist } from "@/redux/features/wishlistSlice"
 import { useSearch } from "@/contexts/SearchContext"
 import { transformQuotesToListings, ListingDataType } from "@/utils/quoteTransform"
-import moment from "moment"
 
-import shape_1 from "@/assets/img/listing/about-shape.png"
-import shape_2 from "@/assets/img/listing/about-shape-2.png"
-import shape_3 from "@/assets/img/listing/about-shape-3.png"
 
 interface TabData {
    title: string;
@@ -147,11 +140,7 @@ const Listing = () => {
       }
    };
 
-   const dispatch = useDispatch();
-   // add to wishlist
-   const handleAddToWishlist = (item: any) => {
-      dispatch(addToWishlist(item));
-   };
+
 
    return (
       <div className="tg-listing-area tg-grey-bg pt-120 pb-40 z-index-9">

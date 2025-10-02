@@ -117,7 +117,7 @@ const TermsArea = () => {
                         <ul className="mb-20 wow fadeInUp" data-wow-delay="1.3s">
                            <li className="mb-10">Access the personal data we hold about you.</li>
                            <li className="mb-10">Request correction of inaccurate data.</li>
-                           <li className="mb-10">Request deletion of your data ("right to be forgotten").</li>
+                           <li className="mb-10">Request deletion of your data (&quot;right to be forgotten&quot;).</li>
                            <li className="mb-0">Withdraw consent for marketing communications at any time.</li>
                         </ul>
                         <p className="mb-0 wow fadeInUp" data-wow-delay="1.4s">
@@ -193,7 +193,7 @@ const TermsArea = () => {
                      <div className="tg-about-content">
                         <h2 className="mb-25 wow fadeInUp" data-wow-delay=".3s">8. Limitation of Liability</h2>
                         <p className="mb-20 wow fadeInUp" data-wow-delay=".4s">
-                           Search Away provides information "as is" without any warranties, express or implied.
+                           Search Away provides information &quot;as is&quot; without any warranties, express or implied.
                         </p>
                         <p className="mb-0 wow fadeInUp" data-wow-delay=".5s">
                            To the fullest extent permitted by law, we disclaim all liability for loss, damage, or inconvenience arising from the use of our website or reliance on the information displayed.
