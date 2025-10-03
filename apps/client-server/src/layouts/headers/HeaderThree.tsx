@@ -1,16 +1,10 @@
 "use client"
-import NavMenu from "./Menu/NavMenu"
 import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react";
 import UseSticky from "@/hooks/UseSticky";
 import Offcanvas from "./Menu/Offcanvas";
 import Sidebar from "./Menu/Sidebar";
-import PhoneIcon from "@/svg/PhoneIcon";
-import CartIcon from "@/svg/CartIcon";
-import UserIcon from "@/svg/UserIcon";
-import HeaderCart from "./Menu/HeaderCart";
-import TotalCart from "./Menu/TotalCart";
 
 import logo_1 from "@/assets/img/logo/logo-white.png";
 import logo_2 from "@/assets/img/logo/logo-green.png";
@@ -18,7 +12,7 @@ import new_logo from "@/assets/img/logo/logo.png";
 
 const HeaderThree = () => {
 
-   const { sticky } = UseSticky();
+   UseSticky();
    const [offCanvas, setOffCanvas] = useState<boolean>(false);
    const [sidebar, setSidebar] = useState<boolean>(false);
 

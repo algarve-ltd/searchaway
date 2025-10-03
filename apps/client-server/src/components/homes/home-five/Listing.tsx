@@ -1,10 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 import Button from "@/components/common/Button"
 import Image from "next/image"
 import Link from "next/link"
-import { useDispatch } from "react-redux"
-import { addToWishlist } from "@/redux/features/wishlistSlice"
 import { useState, useEffect } from "react"
 import { Quote, QuoteApiResponse } from "@/types/quote"
 import { useSearch } from "@/contexts/SearchContext"
@@ -12,7 +9,6 @@ import { useSearch } from "@/contexts/SearchContext"
 import shape_1 from "@/assets/img/banner/banner-2/shape.png"
 
 const Listing = () => {
-   const dispatch = useDispatch();
    const { filters } = useSearch();
    const [quotes, setQuotes] = useState<Quote[]>([]);
    const [loading, setLoading] = useState(true);
@@ -53,10 +49,7 @@ const Listing = () => {
       fetchQuotes();
    }, [filters]); // Re-fetch when filters change
 
-   // add to wishlist
-   const handleAddToWishlist = (item: any) => {
-      dispatch(addToWishlist(item));
-   };
+
 
    // Helper function to get currency symbol
    const getCurrencySymbol = (currency: string) => {
@@ -98,7 +91,7 @@ const Listing = () => {
       if (quote.imageCarousels && quote.imageCarousels.length > 0) {
          const firstCarousel = quote.imageCarousels[0];
          if (firstCarousel.images && firstCarousel.images.length > 0) {
-            const imageUrl = firstCarousel.images[0];
+            const imageUrl = firstCarousel.images[0].url;
             // Use placeholder if image doesn't start with https
             if (imageUrl && imageUrl.startsWith('https')) {
                return imageUrl;
@@ -280,7 +273,7 @@ const Listing = () => {
                               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginRight: '6px' }}>
                                  <path d="M5 2V1C5 0.4 4.6 0 4 0S3 0.4 3 1V2H2C0.9 2 0 2.9 0 4V14C0 15.1 0.9 16 2 16H14C15.1 16 16 15.1 16 14V4C16 2.9 15.1 2 14 2H13V1C13 0.4 12.6 0 12 0S11 0.4 11 1V2H5ZM14 14H2V6H14V14Z" fill="currentColor" />
                               </svg>
-                              {new Date(quote.createdAt).toLocaleDateString('en-GB', {
+                              {new Date(quote.createdAt || quote.timePosted || Date.now()).toLocaleDateString('en-GB', {
                                  day: 'numeric',
                                  month: 'long',
                                  year: 'numeric'

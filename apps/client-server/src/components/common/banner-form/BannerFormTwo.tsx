@@ -105,15 +105,7 @@ const BannerFormTwo = () => {
       return selected ? selected.label : placeholder;
    };
 
-   const formatDate = (dateString: string) => {
-      if (!dateString) return "Select departure date...";
-      const date = new Date(dateString);
-      return date.toLocaleDateString('en-GB', {
-         day: 'numeric',
-         month: 'short',
-         year: 'numeric'
-      });
-   };
+
 
    return (
       <form onSubmit={handleSearch}>

@@ -21,9 +21,9 @@ const TermsArea = () => {
 
             {/* Terms Content with boxed background */}
             <div className="tg-grey-bg rounded-15 p-60 mb-80">
-               
+
                {/* Introduction */}
-               <div className="row mb-60" style={{paddingTop: '50px'}}>
+               <div className="row mb-60" style={{ paddingTop: '50px' }}>
                   <div className="col-lg-12">
                      <div className="tg-about-content">
                         <p className="mb-0 wow fadeInUp" data-wow-delay=".4s">
@@ -92,7 +92,7 @@ const TermsArea = () => {
                         <p className="mb-30 wow fadeInUp" data-wow-delay=".4s">
                            Your privacy is important to us. This section explains how we handle your personal information in accordance with the UK General Data Protection Regulation (GDPR) and the Data Protection Act 2018.
                         </p>
-                        
+
                         <h3 className="mb-15 wow fadeInUp" data-wow-delay=".5s">4.1 Information We Collect</h3>
                         <ul className="mb-30 wow fadeInUp" data-wow-delay=".6s">
                            <li className="mb-10">Personal details you provide when making an enquiry or subscribing to updates (e.g. name, email address, phone number).</li>
@@ -117,7 +117,7 @@ const TermsArea = () => {
                         <ul className="mb-20 wow fadeInUp" data-wow-delay="1.3s">
                            <li className="mb-10">Access the personal data we hold about you.</li>
                            <li className="mb-10">Request correction of inaccurate data.</li>
-                           <li className="mb-10">Request deletion of your data ("right to be forgotten").</li>
+                           <li className="mb-10">Request deletion of your data (&quot;right to be forgotten&quot;).</li>
                            <li className="mb-0">Withdraw consent for marketing communications at any time.</li>
                         </ul>
                         <p className="mb-0 wow fadeInUp" data-wow-delay="1.4s">
@@ -135,7 +135,7 @@ const TermsArea = () => {
                         <p className="mb-30 wow fadeInUp" data-wow-delay=".4s">
                            Our website uses cookies and similar technologies to improve your browsing experience.
                         </p>
-                        
+
                         <h3 className="mb-15 wow fadeInUp" data-wow-delay=".5s">5.1 What Are Cookies?</h3>
                         <p className="mb-30 wow fadeInUp" data-wow-delay=".6s">
                            Cookies are small text files placed on your device when you visit a website. They help us recognise you, remember your preferences, and improve website functionality.
@@ -193,7 +193,7 @@ const TermsArea = () => {
                      <div className="tg-about-content">
                         <h2 className="mb-25 wow fadeInUp" data-wow-delay=".3s">8. Limitation of Liability</h2>
                         <p className="mb-20 wow fadeInUp" data-wow-delay=".4s">
-                           Search Away provides information "as is" without any warranties, express or implied.
+                           Search Away provides information &quot;as is&quot; without any warranties, express or implied.
                         </p>
                         <p className="mb-0 wow fadeInUp" data-wow-delay=".5s">
                            To the fullest extent permitted by law, we disclaim all liability for loss, damage, or inconvenience arising from the use of our website or reliance on the information displayed.
@@ -215,7 +215,7 @@ const TermsArea = () => {
                </div>
 
                {/* Governing Law Section */}
-               <div className="row" style={{paddingBottom: '40px'}}>
+               <div className="row" style={{ paddingBottom: '40px' }}>
                   <div className="col-lg-12">
                      <div className="tg-about-content">
                         <h2 className="mb-25 wow fadeInUp" data-wow-delay=".3s">10. Governing Law</h2>
@@ -227,9 +227,9 @@ const TermsArea = () => {
                </div>
             </div>
          </div>
-         
+
          {/* Contact Section */}
-         <div className="tg-banner-area tg-grey-bg mt-80 p-relative" style={{ 
+         <div className="tg-banner-area tg-grey-bg mt-80 p-relative" style={{
             backgroundImage: `url(/assets/img/banner/banner-4/banner-4.png)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center center',
