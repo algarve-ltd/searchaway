@@ -6,7 +6,8 @@ import moment from 'moment';
 import defaultImage from "@/assets/img/listing/listing-1.jpg";
 
 export interface ListingDataType {
-  id: number;
+  id: string;
+  quoteNumber: string;
   page: string;
   thumb: StaticImageData | string;
   tag?: string;
@@ -73,7 +74,8 @@ export const transformQuoteToListing = (quote: Quote): ListingDataType => {
   }
 
   return {
-    id: parseInt(quote.quoteNumber) || Math.floor(Math.random() * 100000), // Use quoteNumber or generate random
+    id: quote.quoteNumber || `quote-${Date.now()}-${Math.random()}`, // Use original quote number or generate unique ID
+    quoteNumber: quote.quoteNumber, // Preserve original quote number for linking
     page: "home_3", // All quotes will appear on home_3 page
     thumb: image,
     tag: tagDisplay, // Show "time ago" from when quote was posted

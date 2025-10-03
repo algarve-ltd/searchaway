@@ -67,7 +67,7 @@ export const SearchProvider: React.FC<SearchProviderProps> = ({ children }) => {
     hasMore: false
   });
 
-  const ITEMS_PER_PAGE = 8;
+  const ITEMS_PER_PAGE = 16;
 
   const buildQueryParams = useCallback((page: number = 1) => {
     const params = new URLSearchParams();

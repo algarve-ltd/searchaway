@@ -7,6 +7,8 @@ import Offcanvas from "./Menu/Offcanvas";
 import Sidebar from "./Menu/Sidebar";
 
 import logo_1 from "@/assets/img/logo/logo-white.png";
+import logo_2 from "@/assets/img/logo/logo-green.png";
+import new_logo from "@/assets/img/logo/logo.png";
 
 const HeaderThree = () => {
 
@@ -22,9 +24,22 @@ const HeaderThree = () => {
                   <div className="row align-items-center">
                      {/* <div className="col-lg-7 col-5"> */}
                      <div className="col-12 d-flex justify-content-center">
-                        <div className="tgmenu__wrap d-flex align-items-center justify-content-center w-100 pt-20 pb-20">
-                           <div className="logo">
-                              <Link className="logo-1" href="/"><Image src={logo_1} alt="Logo" /></Link>
+                        <div className="tgmenu__wrap d-flex align-items-center justify-content-center w-100 pt-40 pb-40" style={{ minHeight: '160px' }}>
+                           <div className="logo" style={{ padding: '20px' }}>
+                              <Link className="logo-1" href="/">
+                                 <Image 
+                                    src={new_logo} 
+                                    alt="SearchAway Logo" 
+                                    width={300}
+                                    height={100}
+                                    style={{ 
+                                       width: '300px', 
+                                       height: 'auto',
+                                       maxWidth: '100%'
+                                    }} 
+                                    priority
+                                 />
+                              </Link>
                               {/* <Link className="logo-2 d-none" href="/"><Image src={logo_2} alt="Logo" /></Link> */}
                            </div>
                            {/* <nav className="tgmenu__nav tgmenu-1-space ml-180">
