@@ -198,7 +198,7 @@ const Listing = () => {
                   <div className="col-12">
                      <div className="text-center">
                         <p className="mb-0">
-                           Showing <strong>{transformedQuotes.length}</strong> of <strong>{pagination.total}</strong> available quotes
+                           Showing <strong>{transformedQuotes.length}</strong> of <strong>{pagination.totalQuotes}</strong> available quotes
                         </p>
                      </div>
                   </div>
@@ -313,7 +313,7 @@ const Listing = () => {
                                  Loading more quotes...
                               </>
                            ) : (
-                              <>Load More Quotes ({pagination.total - transformedQuotes.length} remaining)</>
+                              <>Load More Quotes ({pagination.totalQuotes - transformedQuotes.length} remaining)</>
                            )}
                         </button>
                         <div className="mt-2">
@@ -332,7 +332,7 @@ const Listing = () => {
                   <div className="col-12">
                      <div className="text-center mt-40">
                         <p className="text-muted">
-                           You&apos;ve viewed all {pagination.total} available quotes
+                           You&apos;ve viewed all {pagination.totalQuotes} available quotes
                         </p>
                      </div>
                   </div>
