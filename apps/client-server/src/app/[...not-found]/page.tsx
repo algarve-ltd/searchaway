@@ -1,9 +1,13 @@
 import NotFound from "@/components/pages/error";
 import Wrapper from "@/layouts/Wrapper";
+import { generatePageMetadata } from "@/config/seo";
+import { Metadata } from "next";
 
-export const metadata = {
-   title: "404 || Tourex - Tour & Travel Booking React Next js Template",
-};
+export const metadata: Metadata = generatePageMetadata('notFound', '/404', {
+  noindex: true, // Don't index 404 pages
+  nofollow: true // Don't follow links from 404 pages
+});
+
 const page = () => {
    return (
       <Wrapper>

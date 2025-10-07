@@ -1,6 +1,6 @@
 "use client"
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, EffectFade, Autoplay } from "swiper/modules";
+import { EffectFade, Autoplay } from "swiper/modules";
 
 const banner_thumb: string[] = [
    "/assets/img/hero/hero-1.jpg",
@@ -16,10 +16,6 @@ const setting = {
    spaceBetween: 0,
    speed: 2000,
    effect: 'fade',
-   navigation: {
-      prevEl: '.tg-hero-prev',
-      nextEl: '.tg-hero-next',
-   },
    autoplay: {
       delay: 3500,
       disableOnInteraction: false
@@ -31,7 +27,7 @@ const Banner = () => {
       <div className="tg-hero-area fix p-relative">
          <div className="tg-hero-top-shadow"></div>
          <div className="shop-slider-wrapper">
-            <Swiper {...setting} modules={[Navigation, EffectFade, Autoplay]} className="swiper-container tg-hero-slider-active">
+            <Swiper {...setting} modules={[EffectFade, Autoplay]} className="swiper-container tg-hero-slider-active">
                {banner_thumb.map((thumb, i) => (
                   <SwiperSlide key={i} className="swiper-slide">
                      <div className="tg-hero-bg">
@@ -55,18 +51,7 @@ const Banner = () => {
                         </div>
                      </div>
                   </div>
-                  <div className="tg-hero-arrow-box d-none d-sm-block">
-                     <button className="tg-hero-next">
-                        <svg width="19" height="15" viewBox="0 0 19 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                           <path d="M18.0274 7.5H0.972625M0.972625 7.5L7.25 1.22263M0.972625 7.5L7.25 13.7774" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                     </button>
-                     <button className="tg-hero-prev">
-                        <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                           <path d="M1.47263 7.5H18.5274M18.5274 7.5L12.25 1.22263M18.5274 7.5L12.25 13.7774" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                     </button>
-                  </div>
+
                </div>
             </div>
          </div>

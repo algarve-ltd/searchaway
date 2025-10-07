@@ -1,9 +1,11 @@
 import Contact from "@/components/contact";
 import Wrapper from "@/layouts/Wrapper";
+import { generatePageMetadata } from "@/config/seo";
+import { Metadata } from "next";
 
-export const metadata = {
-  title: "Contact Tourex - Tour & Travel Booking React Next js Template",
-};
+export const metadata: Metadata = generatePageMetadata('contact', '/contact', {
+  image: "/assets/img/cta/banner.jpg"
+});
 const page = () => {
   return (
     <Wrapper>

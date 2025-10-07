@@ -1,9 +1,9 @@
 import HomeThree from "@/components/homes/home-three";
 import Wrapper from "@/layouts/Wrapper";
+import { generatePageMetadata } from "@/config/seo";
+import { Metadata } from "next";
 
-export const metadata = {
-  title: "Tourex - Tour & Travel Booking React Next js Template",
-};
+export const metadata: Metadata = generatePageMetadata('home', '/');
 const page = () => {
   return (
     <Wrapper>
