@@ -205,6 +205,19 @@ const Listing = () => {
                </div>
             )}
 
+            {/* Pricing Disclaimer */}
+            {transformedQuotes.length > 0 && (
+               <div className="row mb-4">
+                  <div className="col-12">
+                     <div className="text-center">
+                        <p className="mb-0 text-muted" style={{ fontSize: '14px', fontStyle: 'italic' }}>
+                           The prices shown are correct at the time of posting but can change. Contact the agent for the live price.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            )}
+
             <div className="row isotope-wrapper project-active-two">
                {transformedQuotes
                   .map((item) => (
