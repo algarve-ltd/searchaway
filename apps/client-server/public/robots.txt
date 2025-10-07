@@ -1,0 +1,31 @@
+# Robots.txt for SearchAway Travel Website
+
+User-agent: *
+Allow: /
+
+# Disallow private/sensitive pages
+Disallow: /login
+Disallow: /register
+Disallow: /checkout
+Disallow: /cart
+Disallow: /wishlist
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Allow important pages
+Allow: /
+Allow: /about
+Allow: /contact
+Allow: /tours
+Allow: /hotels
+Allow: /blog
+Allow: /faq
+Allow: /pricing
+Allow: /team
+
+# Sitemap location
+Sitemap: https://searchaway.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
