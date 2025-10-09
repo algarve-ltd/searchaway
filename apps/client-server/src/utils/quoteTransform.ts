@@ -16,6 +16,7 @@ export interface PublicQuoteResponse {
   destinationCountry: string;
   destinationRegion: string;
   destinationResort: string;
+  holidayTitle: string;
   featuredImage: string;
   timePosted: string;
   guests: number;
@@ -55,8 +56,8 @@ export const transformQuoteToListing = (quote: Quote): ListingDataType => {
     throw new Error('Quote object is null or undefined');
   }
 
-  // Use the hotel name or location as title, fallback to "Holiday Package"
-  const title = quote.hotelName || quote.location || 'Holiday Package';
+  // Use the holiday title, fallback to hotel name or location, or default to "Holiday Package"
+  const title = quote.holidayTitle || quote.hotelName || quote.location || 'Holiday Package';
 
   // Format tag display from timePosted using moment.js for "time ago" format
   const tagDisplay = moment(quote.timePosted).fromNow();

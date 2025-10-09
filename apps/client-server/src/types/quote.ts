@@ -8,6 +8,7 @@ export interface Quote {
   destinationCountry: string;
   destinationRegion: string;
   destinationResort: string;
+  holidayTitle: string;
   featuredImage: string;
   timePosted: string;
   guests: number;
