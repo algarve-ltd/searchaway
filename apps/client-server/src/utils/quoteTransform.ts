@@ -5,6 +5,25 @@ import moment from 'moment';
 // Default fallback image
 import defaultImage from "@/assets/img/listing/listing-1.jpg";
 
+// Interface matching the public quotes API response from quoteaway
+export interface PublicQuoteResponse {
+  agentName: string;
+  profilePicture: string;
+  quoteNumber: string;
+  hotelName: string;
+  departingAirport: string | null;
+  location: string;
+  destinationCountry: string;
+  destinationRegion: string;
+  destinationResort: string;
+  featuredImage: string;
+  timePosted: string;
+  guests: number;
+  price: number;
+  discount: number | null;
+  holidayDate: string | null;
+}
+
 export interface ListingDataType {
   id: string;
   quoteNumber: string;
@@ -52,6 +71,9 @@ export const transformQuoteToListing = (quote: Quote): ListingDataType => {
 
   // Use the unified price (already calculated with discount)
   const totalPrice = quote.price || 0;
+  
+  // Calculate per person price
+  const perPersonPrice = quote.guests > 0 ? totalPrice / quote.guests : totalPrice;
 
   // Get location - use hotelName if location is empty, or default
   const location = quote.location || quote.hotelName || 'Location TBC';
@@ -83,7 +105,7 @@ export const transformQuoteToListing = (quote: Quote): ListingDataType => {
     guest: guestDisplay,
     title: title,
     location: location,
-    price: totalPrice,
+    price: perPersonPrice,
     review: 4.5, // Default review score - could be enhanced with real reviews
     total_review: "(New)",
     category: category,

@@ -282,7 +282,7 @@ const Listing = () => {
                                     {item.delete_price && <del className="tg-listing-card-currency-old">£{Math.round(item.delete_price)}</del>}
                                     <span className="currency-symbol">£</span>{Math.round(item.price)}
                                  </span>
-                                 <span className="tg-listing-card-activity-person">/Total</span>
+                                 <span className="tg-listing-card-activity-person">/PP</span>
                               </div>
                               {/* Agent Avatar */}
                               {item.agent_avatar && (
