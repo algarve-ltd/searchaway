@@ -51,63 +51,9 @@ const Listing = () => {
 
 
 
-   // Helper function to get currency symbol
-   const getCurrencySymbol = (currency: string) => {
-      switch (currency) {
-         case 'USD': return '$';
-         case 'EUR': return '€';
-         case 'GBP':
-         default: return '£';
-      }
-   };
-
-   // Helper function to get the correct price from quote
-   const getQuotePrice = (quote: Quote) => {
-      // For builder quotes, check pricing object first
-      if (quote.pricing?.totalPrice) {
-         return {
-            price: quote.pricing.totalPrice,
-            currency: quote.pricing.currencySymbol || quote.currencySymbol || 'GBP'
-         };
-      }
-
-      // For direct quotes or fallback
-      if (quote.totalPrice) {
-         return {
-            price: quote.totalPrice,
-            currency: quote.currencySymbol || 'GBP'
-         };
-      }
-
-      // Default fallback
-      return {
-         price: null,
-         currency: quote.currencySymbol || 'GBP'
-      };
-   };
-
-   // Helper function to get the first image from image carousels
-   const getQuoteImage = (quote: Quote) => {
-      if (quote.imageCarousels && quote.imageCarousels.length > 0) {
-         const firstCarousel = quote.imageCarousels[0];
-         if (firstCarousel.images && firstCarousel.images.length > 0) {
-            const imageUrl = firstCarousel.images[0].url;
-            // Use placeholder if image doesn't start with https
-            if (imageUrl && imageUrl.startsWith('https')) {
-               return imageUrl;
-            }
-         }
-      }
-      return 'https://placehold.co/600x400/orange/white?text="';
-   };
-
-   // Helper function to get quote display name
-   const getQuoteDisplayName = (quote: Quote) => {
-      if (quote.holidayInfo?.title) return quote.holidayInfo.title;
-      if (quote.title) return quote.title;
-      if (quote.hotels && quote.hotels.length > 0 && quote.hotels[0].hotelName) return quote.hotels[0].hotelName;
-      if (quote.villas && quote.villas.length > 0 && quote.villas[0].villaName) return quote.villas[0].villaName;
-      return `Quote #${quote.quoteNumber}`;
+   // Helper function to get currency symbol - hardcoded to GBP for now
+   const getCurrencySymbol = () => {
+      return '£';
    };
 
    if (loading) {
@@ -168,7 +114,7 @@ const Listing = () => {
             </div>
             <div className="row">
                {quotes.length > 0 ? quotes.map((quote, index) => (
-                  <div key={quote._id || quote.quoteNumber || index} className="col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".9s" data-wow-duration=".6s">
+                  <div key={quote.quoteNumber || index} className="col-xl-3 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".9s" data-wow-duration=".6s">
                      <div className="modern-quote-card mb-25" style={{
                         backgroundColor: 'white',
                         borderRadius: '20px',
@@ -180,8 +126,8 @@ const Listing = () => {
                            <Link href={`https://localhost:3002/quote/${quote.quoteNumber}`} target="_blank" rel="noopener noreferrer">
                               <Image
                                  className="w-100"
-                                 src={getQuoteImage(quote)}
-                                 alt={getQuoteDisplayName(quote)}
+                                 src={quote.featuredImage}
+                                 alt={quote.holidayTitle || quote.hotelName}
                                  width={400}
                                  height={280}
                                  style={{
@@ -208,7 +154,7 @@ const Listing = () => {
                               textOverflow: 'ellipsis'
                            }}>
                               <Link href={`https://localhost:3002/quote/${quote.quoteNumber}`} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
-                                 {getQuoteDisplayName(quote)}
+                                 {quote.holidayTitle || quote.hotelName || `Quote #${quote.quoteNumber}`}
                               </Link>
                            </h3>
 
@@ -227,7 +173,7 @@ const Listing = () => {
                                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginRight: '6px' }}>
                                     <path d="M5 2V1C5 0.4 4.6 0 4 0S3 0.4 3 1V2H2C0.9 2 0 2.9 0 4V14C0 15.1 0.9 16 2 16H14C15.1 16 16 15.1 16 14V4C16 2.9 15.1 2 14 2H13V1C13 0.4 12.6 0 12 0S11 0.4 11 1V2H5ZM14 14H2V6H14V14Z" fill="currentColor" />
                                  </svg>
-                                 {quote.nights ? `${quote.nights} days` : '7 days'}
+                                 {quote.holidayDate ? new Date(quote.holidayDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }) : '7 days'}
                               </div>
 
                               <div style={{
@@ -240,27 +186,20 @@ const Listing = () => {
                            </div>
 
                            <div style={{ marginBottom: '15px' }}>
-                              {(() => {
-                                 const { price, currency } = getQuotePrice(quote);
-                                 return (
-                                    <>
-                                       <span style={{
-                                          fontSize: '32px',
-                                          fontWeight: 'normal',
-                                          color: '#e67e22'
-                                       }}>
-                                          {getCurrencySymbol(currency)}{price || 'Contact for price'}
-                                       </span>
-                                       <span style={{
-                                          fontSize: '16px',
-                                          color: '#7c8ba0',
-                                          marginLeft: '8px'
-                                       }}>
-                                          {price ? 'per person' : ''}
-                                       </span>
-                                    </>
-                                 );
-                              })()}
+                              <span style={{
+                                 fontSize: '32px',
+                                 fontWeight: 'normal',
+                                 color: '#e67e22'
+                              }}>
+                                 {getCurrencySymbol()}{quote.price || 'Contact for price'}
+                              </span>
+                              <span style={{
+                                 fontSize: '16px',
+                                 color: '#7c8ba0',
+                                 marginLeft: '8px'
+                              }}>
+                                 {quote.price ? 'per person' : ''}
+                              </span>
                            </div>
 
                            <div style={{
@@ -273,7 +212,7 @@ const Listing = () => {
                               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginRight: '6px' }}>
                                  <path d="M5 2V1C5 0.4 4.6 0 4 0S3 0.4 3 1V2H2C0.9 2 0 2.9 0 4V14C0 15.1 0.9 16 2 16H14C15.1 16 16 15.1 16 14V4C16 2.9 15.1 2 14 2H13V1C13 0.4 12.6 0 12 0S11 0.4 11 1V2H5ZM14 14H2V6H14V14Z" fill="currentColor" />
                               </svg>
-                              {new Date(quote.createdAt || quote.timePosted || Date.now()).toLocaleDateString('en-GB', {
+                              {new Date(quote.timePosted || Date.now()).toLocaleDateString('en-GB', {
                                  day: 'numeric',
                                  month: 'long',
                                  year: 'numeric'
@@ -281,7 +220,7 @@ const Listing = () => {
                            </div>
 
                            {/* Agent Avatar */}
-                           {quote.userId?.agentImage && (
+                           {quote.profilePicture && quote.profilePicture !== 'https://placehold.co/600x400' && (
                               <div style={{
                                  position: 'absolute',
                                  bottom: '15px',
@@ -294,8 +233,8 @@ const Listing = () => {
                                  boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
                               }}>
                                  <Image
-                                    src={quote.userId.agentImage}
-                                    alt={`${quote.userId.firstName} ${quote.userId.lastName}`}
+                                    src={quote.profilePicture}
+                                    alt={quote.agentName}
                                     width={40}
                                     height={40}
                                     style={{
