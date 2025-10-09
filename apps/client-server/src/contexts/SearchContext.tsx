@@ -10,6 +10,8 @@ export interface SearchFilters {
   departureDate: string;
   holidayType: string; // For holiday type filtering
   country: string;
+  region: string;
+  resort: string;
   category: string;
 }
 
@@ -38,6 +40,8 @@ const defaultFilters: SearchFilters = {
   departureDate: '',
   holidayType: '',
   country: '',
+  region: '',
+  resort: '',
   category: ''
 };
 
@@ -81,6 +85,8 @@ export const SearchProvider: React.FC<SearchProviderProps> = ({ children }) => {
     if (filters.destination) params.append('destination', filters.destination);
     if (filters.holidayType) params.append('holidayType', filters.holidayType);
     if (filters.country) params.append('country', filters.country);
+    if (filters.region) params.append('region', filters.region);
+    if (filters.resort) params.append('resort', filters.resort);
     if (filters.category) params.append('category', filters.category);
 
     return params.toString();
