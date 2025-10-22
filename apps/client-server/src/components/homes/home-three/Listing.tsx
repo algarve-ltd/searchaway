@@ -300,6 +300,36 @@ const Listing = () => {
                                     </svg>
                                     {item.departure_airport ? item.departure_airport : "Flight not included"}
                                  </span>
+                                 {/* Resort/Region */}
+                                 {(item.destinationResort || item.destinationRegion) && (
+                                    <span className="tg-listing-card-resort" style={{
+                                       display: 'block',
+                                       overflow: 'hidden',
+                                       textOverflow: 'ellipsis',
+                                       whiteSpace: 'nowrap'
+                                    }}>
+                                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <path d="M8 2L3 6V13H6V10C6 9.46957 6.21071 8.96086 6.58579 8.58579C6.96086 8.21071 7.46957 8 8 8C8.53043 8 9.03914 8.21071 9.41421 8.58579C9.78929 8.96086 10 9.46957 10 10V13H13V6L8 2Z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                                       </svg>
+                                       {item.destinationResort || item.destinationRegion}
+                                    </span>
+                                 )}
+                                 {/* Country */}
+                                 {item.destinationCountry && (
+                                    <span className="tg-listing-card-country" style={{
+                                       display: 'block',
+                                       overflow: 'hidden',
+                                       textOverflow: 'ellipsis',
+                                       whiteSpace: 'nowrap'
+                                    }}>
+                                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                                          <path d="M2 8H14" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                                          <path d="M8 2C9.5913 3.73835 10.4783 5.82603 10.5 8C10.4783 10.174 9.5913 12.2616 8 14C6.4087 12.2616 5.52168 10.174 5.5 8C5.52168 5.82603 6.4087 3.73835 8 2Z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                                       </svg>
+                                       {item.destinationCountry}
+                                    </span>
+                                 )}
                               </div>
                            </div>
                            <div className="tg-listing-card-price d-flex align-items-end justify-content-between">

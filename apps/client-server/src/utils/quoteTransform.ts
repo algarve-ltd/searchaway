@@ -48,6 +48,9 @@ export interface ListingDataType {
   agent_title?: string;
   departure_date?: string;
   departure_airport?: string;
+  destinationCountry?: string;
+  destinationRegion?: string;
+  destinationResort?: string;
 }
 
 export const transformQuoteToListing = (quote: Quote): ListingDataType => {
@@ -114,7 +117,10 @@ export const transformQuoteToListing = (quote: Quote): ListingDataType => {
     agent_name: quote.agentName,
     agent_title: undefined, // Not available in unified format
     departure_date: undefined, // Could be enhanced if needed
-    departure_airport: quote.departingAirport || "Flights not included"
+    departure_airport: quote.departingAirport || "Flights not included",
+    destinationCountry: quote.destinationCountry,
+    destinationRegion: quote.destinationRegion,
+    destinationResort: quote.destinationResort
   };
 };
 
