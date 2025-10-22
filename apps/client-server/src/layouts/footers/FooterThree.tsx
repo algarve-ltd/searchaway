@@ -20,9 +20,9 @@ const FooterThree = () => {
                               </div>
                               <p className="mb-20">SearchAway only features real holidays, created by independent UK travel advisors, not automated deals. Every offer is researched, priced, and ready for you.</p>
                               <div className="tg-footer-social">
-                                 <Link href="#"><i className="fa-brands fa-facebook-f"></i></Link>
-                                 <Link href="#"><i className="fa-brands fa-instagram"></i></Link>
-                                 <Link href="#"><i className="fa-brands fa-tiktok"></i></Link>
+                                 <Link href="https://www.facebook.com/quoteawayai"><i className="fa-brands fa-facebook-f"></i></Link>
+                                 <Link href="https://www.instagram.com/quoteawayai"><i className="fa-brands fa-instagram"></i></Link>
+                                 <Link href="https://www.tiktok.com/@quoteawayai"><i className="fa-brands fa-tiktok"></i></Link>
                               </div>
                            </div>
                         </div>
