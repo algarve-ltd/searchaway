@@ -150,12 +150,13 @@ export const SearchProvider: React.FC<SearchProviderProps> = ({ children }) => {
   };
 
   // Initial load and auto-search when filters change
-  useEffect(() => {
-    const hasActiveFilters = Object.values(filters).some(value => value !== '');
-    if (hasActiveFilters) {
-      searchQuotes();
-    }
-  }, [filters, searchQuotes]);
+  // Commented out to wait for manual search button click
+  // useEffect(() => {
+  //   const hasActiveFilters = Object.values(filters).some(value => value !== '');
+  //   if (hasActiveFilters) {
+  //     searchQuotes();
+  //   }
+  // }, [filters, searchQuotes]);
 
   // Load initial quotes on mount
   useEffect(() => {
