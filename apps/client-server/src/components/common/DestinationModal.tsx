@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 import destinationData from "@/data/DestinationData.json";
 
@@ -42,6 +42,7 @@ interface DestinationModalProps {
 const DestinationModal = ({ isOpen, onClose, onSave }: DestinationModalProps) => {
    const [countries, setCountries] = useState<Country[]>([]);
    const [mounted, setMounted] = useState(false);
+   const lastToggleRef = useRef<{ countryIndex: number; regionIndex: number; time: number } | null>(null);
 
    useEffect(() => {
       setMounted(true);
@@ -135,7 +136,7 @@ const DestinationModal = ({ isOpen, onClose, onSave }: DestinationModalProps) =>
 
    const toggleRegionExpanded = (countryIndex: number, regionIndex: number) => {
       setCountries(prev => {
-         const newCountries = [...prev];
+         const newCountries = JSON.parse(JSON.stringify(prev));
          newCountries[countryIndex].regions[regionIndex].expanded = 
             !newCountries[countryIndex].regions[regionIndex].expanded;
          return newCountries;
@@ -238,6 +239,7 @@ const DestinationModal = ({ isOpen, onClose, onSave }: DestinationModalProps) =>
                display: 'flex',
                flexDirection: 'column'
             }}
+            onClick={(e) => e.stopPropagation()}
          >
             {/* Header */}
             <div style={{
@@ -333,7 +335,8 @@ const DestinationModal = ({ isOpen, onClose, onSave }: DestinationModalProps) =>
                                  <input
                                     type="checkbox"
                                     checked={region.selected}
-                                    onChange={() => {
+                                    onChange={(e) => {
+                                       e.stopPropagation();
                                        toggleRegion(countryIndex, regionIndex);
                                     }}
                                     style={{ 
@@ -354,7 +357,8 @@ const DestinationModal = ({ isOpen, onClose, onSave }: DestinationModalProps) =>
                                        cursor: 'pointer',
                                        userSelect: 'none'
                                     }} 
-                                    onClick={() => {
+                                    onClick={(e) => {
+                                       e.stopPropagation();
                                        toggleRegion(countryIndex, regionIndex);
                                     }}
                                  >
@@ -363,7 +367,9 @@ const DestinationModal = ({ isOpen, onClose, onSave }: DestinationModalProps) =>
                               </div>
                               {region.resorts.length > 0 && (
                                  <button
-                                    onClick={() => {
+                                    onClick={(e) => {
+                                       e.preventDefault();
+                                       e.stopPropagation();
                                        toggleRegionExpanded(countryIndex, regionIndex);
                                     }}
                                     style={{
