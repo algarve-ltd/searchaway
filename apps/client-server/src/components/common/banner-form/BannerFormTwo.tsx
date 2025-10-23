@@ -10,6 +10,7 @@ interface DropdownOption {
 
 // Top 10 UK Airports by passenger volume
 const departureAirportOptions: DropdownOption[] = [
+   { value: "", label: "All Airports" },
    { value: "LHR", label: "London Heathrow (LHR)" },
    { value: "LGW", label: "London Gatwick (LGW)" },
    { value: "MAN", label: "Manchester (MAN)" },
@@ -23,6 +24,7 @@ const departureAirportOptions: DropdownOption[] = [
 ];
 
 const nightsOptions: DropdownOption[] = [
+   { value: "", label: "Any Nights" },
    { value: "1", label: "1 Night" },
    { value: "2", label: "2 Nights" },
    { value: "3", label: "3 Nights" },
@@ -34,6 +36,7 @@ const nightsOptions: DropdownOption[] = [
 ];
 
 const priceRangeOptions: DropdownOption[] = [
+   { value: "", label: "Any Price" },
    { value: "0-250", label: "Under £250" },
    { value: "251-500", label: "£251 - £500" },
    { value: "501-750", label: "£501 - £750" },
@@ -92,7 +95,7 @@ const BannerFormTwo = () => {
    const getDestinationLabel = () => {
       const totalSelections = (filters.countries?.length || 0) + (filters.regions?.length || 0) + (filters.resorts?.length || 0);
       if (totalSelections === 0) {
-         return "Select destination...";
+         return "Any Destination";
       }
       return `${totalSelections} destination${totalSelections === 1 ? '' : 's'} selected`;
    };
@@ -113,6 +116,10 @@ const BannerFormTwo = () => {
    };
 
    const getSelectedLabel = (options: DropdownOption[], value: string, placeholder: string) => {
+      // If value is empty string, show the first option (which should be "Any/All")
+      if (!value) {
+         return options[0]?.label || placeholder;
+      }
       const selected = options.find(option => option.value === value);
       return selected ? selected.label : placeholder;
    };
