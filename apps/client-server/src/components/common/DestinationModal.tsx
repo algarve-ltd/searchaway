@@ -39,7 +39,7 @@ interface DestinationModalProps {
    };
 }
 
-const DestinationModal = ({ isOpen, onClose, onSave, initialSelections }: DestinationModalProps) => {
+const DestinationModal = ({ isOpen, onClose, onSave }: DestinationModalProps) => {
    const [countries, setCountries] = useState<Country[]>([]);
    const [mounted, setMounted] = useState(false);
 
