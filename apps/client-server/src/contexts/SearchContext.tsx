@@ -9,9 +9,9 @@ export interface SearchFilters {
   priceRange: string;
   departureDate: string;
   holidayType: string; // For holiday type filtering
-  country: string;
-  region: string;
-  resort: string;
+  countries: string[]; // Multiple countries
+  regions: string[]; // Multiple regions
+  resorts: string[]; // Multiple resorts
   category: string;
 }
 
@@ -39,9 +39,9 @@ const defaultFilters: SearchFilters = {
   priceRange: '',
   departureDate: '',
   holidayType: '',
-  country: '',
-  region: '',
-  resort: '',
+  countries: [],
+  regions: [],
+  resorts: [],
   category: ''
 };
 
@@ -84,9 +84,18 @@ export const SearchProvider: React.FC<SearchProviderProps> = ({ children }) => {
     if (filters.departureDate) params.append('departureDate', filters.departureDate);
     if (filters.destination) params.append('destination', filters.destination);
     if (filters.holidayType) params.append('holidayType', filters.holidayType);
-    if (filters.country) params.append('country', filters.country);
-    if (filters.region) params.append('region', filters.region);
-    if (filters.resort) params.append('resort', filters.resort);
+    
+    // Handle multiple countries, regions, and resorts
+    if (filters.countries && filters.countries.length > 0) {
+      filters.countries.forEach(country => params.append('countries', country));
+    }
+    if (filters.regions && filters.regions.length > 0) {
+      filters.regions.forEach(region => params.append('regions', region));
+    }
+    if (filters.resorts && filters.resorts.length > 0) {
+      filters.resorts.forEach(resort => params.append('resorts', resort));
+    }
+    
     if (filters.category) params.append('category', filters.category);
 
     return params.toString();

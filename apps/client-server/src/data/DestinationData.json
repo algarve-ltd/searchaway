@@ -1,0 +1,1707 @@
+[
+  {
+    "country": "Antigua",
+    "count": 2,
+    "regions": [
+      {
+        "region": "Antigua",
+        "count": 1,
+        "resorts": [
+          "Royalton CHIC Antigua"
+        ]
+      },
+      {
+        "region": "Mamora Bay",
+        "count": 1,
+        "resorts": [
+          "St James's Club & Villas"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Barbados",
+    "count": 1,
+    "regions": [
+      {
+        "region": "Hastings",
+        "count": 1,
+        "resorts": [
+          "Sugar Bay Barbados"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Bulgaria",
+    "count": 5,
+    "regions": [
+      {
+        "region": "Bourgas Area",
+        "count": 5,
+        "resorts": [
+          "Sunny Beach",
+          "Nessebar"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Cape Verde",
+    "count": 11,
+    "regions": [
+      {
+        "region": "Sal",
+        "count": 9,
+        "resorts": [
+          "Santa Maria",
+          "Hotel Riu Palace Santa Maria",
+          "Riu Cabo Verde"
+        ]
+      },
+      {
+        "region": "Boa Vista",
+        "count": 2,
+        "resorts": [
+          "Riu Karamboa"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Croatia",
+    "count": 3,
+    "regions": [
+      {
+        "region": "Adriatic Sea",
+        "count": 1,
+        "resorts": []
+      },
+      {
+        "region": "Dubrovnik-Neretva",
+        "count": 1,
+        "resorts": [
+          "Dubrovnik"
+        ]
+      },
+      {
+        "region": "Split and Dalmatian Coast",
+        "count": 1,
+        "resorts": [
+          "Split (Old Town)"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Cyprus",
+    "count": 62,
+    "regions": [
+      {
+        "region": "Paphos",
+        "count": 30,
+        "resorts": [
+          "Coral Bay",
+          "Paphos",
+          "Alexander the Great Beach Hotel",
+          "Atlantica Akteon",
+          "Avanti Village",
+          "Avlida Hotel",
+          "Constantinou Bros Athena Beach Hotel",
+          "Ivi Mare by Louis Hotels",
+          "Kato Paphos",
+          "King Evelthon Beach Hotel and Resort",
+          "Limassol",
+          "Paphos Gardens",
+          "Paphos Resort",
+          "Polis and Latchi"
+        ]
+      },
+      {
+        "region": "Protaras",
+        "count": 10,
+        "resorts": [
+          "Protaras"
+        ]
+      },
+      {
+        "region": "Larnaca",
+        "count": 7,
+        "resorts": [
+          "Protaras",
+          "Ayia Napa"
+        ]
+      },
+      {
+        "region": "Paphos Area",
+        "count": 5,
+        "resorts": [
+          "Paphos",
+          "Limassol"
+        ]
+      },
+      {
+        "region": "Paphos Resort",
+        "count": 5,
+        "resorts": [
+          "Paphos"
+        ]
+      },
+      {
+        "region": "Limassol",
+        "count": 3,
+        "resorts": []
+      },
+      {
+        "region": "Ayia Napa",
+        "count": 2,
+        "resorts": [
+          "Nissi Beach"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Czech Republic",
+    "count": 8,
+    "regions": [
+      {
+        "region": "Prague",
+        "count": 8,
+        "resorts": [
+          "Prague City"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Denmark",
+    "count": 3,
+    "regions": [
+      {
+        "region": "Copenhagen",
+        "count": 3,
+        "resorts": [
+          "Copenhagen City",
+          "Vesterbro"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Dominican Republic",
+    "count": 20,
+    "regions": [
+      {
+        "region": "Punta Cana",
+        "count": 11,
+        "resorts": [
+          "Uvero Alto",
+          "Bavaro",
+          "Miches"
+        ]
+      },
+      {
+        "region": "La Romana",
+        "count": 5,
+        "resorts": [
+          "Bayahibe",
+          "San Pedro de Macoris"
+        ]
+      },
+      {
+        "region": "Bavaro",
+        "count": 4,
+        "resorts": [
+          "Punta Cana",
+          "Dreams Macao Beach"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Egypt",
+    "count": 80,
+    "regions": [
+      {
+        "region": "Hurghada",
+        "count": 29,
+        "resorts": [
+          "Sahl Hasheesh",
+          "Makadi Bay",
+          "Hurghada Area",
+          "Aladdin Beach Resort",
+          "Caves Beach Resort",
+          "El Gouna",
+          "Pharaoh Azur Beach Resort",
+          "Sunny Days El Palacio Resort & Spa",
+          "Sunrise Aqua Joy Resort"
+        ]
+      },
+      {
+        "region": "Sharm el Sheikh",
+        "count": 18,
+        "resorts": [
+          "Naama Bay",
+          "Nabq Bay",
+          "Sharks Bay",
+          "Hadaba",
+          "Ras Nasrani"
+        ]
+      },
+      {
+        "region": "Hurghada Area",
+        "count": 15,
+        "resorts": [
+          "Pickalbatros Aqua Park Resort - Hurghada",
+          "Sindbad Club",
+          "Sunrise Aqua Joy Resort",
+          "Sunrise Solara Aqua Park Resort",
+          "Desert Rose Resort",
+          "Hurghada",
+          "Iberotel Casa Del Mar Resort",
+          "Pickalbatros Aqua Vista Resort - Hurghada",
+          "Pickalbatros Jungle Aqua Park Resort - Neverland Hurghada",
+          "Sunrise Alora Aqua Park Resort"
+        ]
+      },
+      {
+        "region": "Sharm El Sheikh",
+        "count": 10,
+        "resorts": [
+          "Nabq Bay",
+          "Aurora Oriental Resort",
+          "Baron Palms Sharm El Sheikh",
+          "Hadaba",
+          "Naama Bay",
+          "Ras Nasrani"
+        ]
+      },
+      {
+        "region": "Makadi Bay",
+        "count": 2,
+        "resorts": [
+          "JAZ Makadi Saraya Resort",
+          "Stella Gardens Resort & Spa"
+        ]
+      },
+      {
+        "region": "Nabq Bay",
+        "count": 1,
+        "resorts": []
+      },
+      {
+        "region": "Red Sea",
+        "count": 1,
+        "resorts": [
+          "Hurghada"
+        ]
+      },
+      {
+        "region": "Sahl Hasheesh, Hurgarda",
+        "count": 1,
+        "resorts": [
+          "Flow Spectrum Resort Sahl Hasheesh"
+        ]
+      },
+      {
+        "region": "Sharm El-Sheikh",
+        "count": 1,
+        "resorts": []
+      },
+      {
+        "region": "Sinai",
+        "count": 1,
+        "resorts": [
+          "Hadaba"
+        ]
+      },
+      {
+        "region": "South Sinai",
+        "count": 1,
+        "resorts": []
+      }
+    ]
+  },
+  {
+    "country": "Estonia",
+    "count": 1,
+    "regions": [
+      {
+        "region": "Tallinn City",
+        "count": 1,
+        "resorts": []
+      }
+    ]
+  },
+  {
+    "country": "France",
+    "count": 26,
+    "regions": [
+      {
+        "region": "Île-de-France",
+        "count": 12,
+        "resorts": [
+          "Paris",
+          "Marne La Vallée",
+          "Disneyland Paris",
+          "Elysees Ceramic",
+          "Marne-la-Vallée",
+          "Montmartre"
+        ]
+      },
+      {
+        "region": "Paris",
+        "count": 7,
+        "resorts": [
+          "Disneyland Paris",
+          "Marne-la-Vallée",
+          "Paris City"
+        ]
+      },
+      {
+        "region": "Ile-de-France",
+        "count": 3,
+        "resorts": [
+          "Marne La Vallee",
+          "Montparnasse",
+          "Paris"
+        ]
+      },
+      {
+        "region": "Provence-Alpes-Côte d'Azur",
+        "count": 2,
+        "resorts": [
+          "Nice"
+        ]
+      },
+      {
+        "region": "Greater Paris",
+        "count": 1,
+        "resorts": [
+          "Hotel Atrium"
+        ]
+      },
+      {
+        "region": "Nice",
+        "count": 1,
+        "resorts": [
+          "Nice Ville"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Fuerteventura",
+    "count": 1,
+    "regions": [
+      {
+        "region": "Canary Islands",
+        "count": 1,
+        "resorts": [
+          "Corralejo"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Gambia",
+    "count": 3,
+    "regions": [
+      {
+        "region": "Kotu",
+        "count": 2,
+        "resorts": []
+      },
+      {
+        "region": "Kololi",
+        "count": 1,
+        "resorts": [
+          "Holiday Beach"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Germany",
+    "count": 3,
+    "regions": [
+      {
+        "region": "Cologne",
+        "count": 1,
+        "resorts": []
+      },
+      {
+        "region": "Cologne City",
+        "count": 1,
+        "resorts": []
+      },
+      {
+        "region": "Hamburg",
+        "count": 1,
+        "resorts": [
+          "Hamburg City"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Greece",
+    "count": 160,
+    "regions": [
+      {
+        "region": "Crete",
+        "count": 34,
+        "resorts": [
+          "Heraklion Area",
+          "Rethymnon",
+          "Amoudara",
+          "Analipsi",
+          "Analipsis",
+          "Chania",
+          "Elounda",
+          "Hersonissos",
+          "Kokkini Hani",
+          "Aghios Nikolaos",
+          "Agia Pelagia",
+          "Agia Varvara",
+          "Ammoudara",
+          "Ammoudara (Nr Heraklion)",
+          "Analipsi, Heraklion area",
+          "Anissaras",
+          "Chania Area",
+          "Gouves",
+          "Kalamaki",
+          "Malia"
+        ]
+      },
+      {
+        "region": "Rhodes",
+        "count": 31,
+        "resorts": [
+          "Pefkos",
+          "Ixia",
+          "Faliraki",
+          "Kiotari",
+          "Ialyssos",
+          "Kalithea",
+          "Kolymbia",
+          "Afandou",
+          "Kalathos"
+        ]
+      },
+      {
+        "region": "Corfu",
+        "count": 20,
+        "resorts": [
+          "Messonghi",
+          "Dassia",
+          "Roda",
+          "St George South",
+          "Acharavi",
+          "Aghios Spyridon",
+          "Agios Ioannis - Corfu",
+          "Benitses",
+          "Boukari",
+          "Liapades",
+          "Moraitika",
+          "Sandy Beach Resort",
+          "Sidari"
+        ]
+      },
+      {
+        "region": "Kos",
+        "count": 15,
+        "resorts": [
+          "Psalidi",
+          "Marmari",
+          "Kardamena",
+          "Kos Town",
+          "Tigaki",
+          "Tingaki"
+        ]
+      },
+      {
+        "region": "Crete (Heraklion Area)",
+        "count": 12,
+        "resorts": [
+          "Gouves",
+          "Hersonissos",
+          "Koutouloufari",
+          "Amoudara",
+          "Analipsis",
+          "Makry Gialos"
+        ]
+      },
+      {
+        "region": "Ionian Islands",
+        "count": 9,
+        "resorts": [
+          "Roda",
+          "Sami",
+          "Acharavi",
+          "Kefalonia"
+        ]
+      },
+      {
+        "region": "Zante",
+        "count": 8,
+        "resorts": [
+          "Kalamaki",
+          "Laganas",
+          "Tragaki",
+          "Argassi",
+          "Tsilivi"
+        ]
+      },
+      {
+        "region": "Halkidiki",
+        "count": 6,
+        "resorts": [
+          "Hanioti",
+          "Pefkohori"
+        ]
+      },
+      {
+        "region": "Skiathos",
+        "count": 4,
+        "resorts": [
+          "Koukounaries",
+          "Punta",
+          "Skiathos Town",
+          "Troulos"
+        ]
+      },
+      {
+        "region": "Crete (Chania Area)",
+        "count": 3,
+        "resorts": [
+          "Gerani"
+        ]
+      },
+      {
+        "region": "South Aegean Islands",
+        "count": 3,
+        "resorts": [
+          "Lambi",
+          "Faliraki"
+        ]
+      },
+      {
+        "region": "Aegean Sea",
+        "count": 2,
+        "resorts": [
+          "Various Ports"
+        ]
+      },
+      {
+        "region": "Athens",
+        "count": 2,
+        "resorts": [
+          "Athens City"
+        ]
+      },
+      {
+        "region": "Kefalonia",
+        "count": 2,
+        "resorts": [
+          "Lassi",
+          "Sami"
+        ]
+      },
+      {
+        "region": "Parga",
+        "count": 2,
+        "resorts": [
+          "Preveza Town"
+        ]
+      },
+      {
+        "region": "Peloponnese",
+        "count": 2,
+        "resorts": [
+          "Kalamata",
+          "Skafidia"
+        ]
+      },
+      {
+        "region": "Aegean",
+        "count": 1,
+        "resorts": [
+          "Aegean Shores"
+        ]
+      },
+      {
+        "region": "Attica",
+        "count": 1,
+        "resorts": [
+          "Athens City"
+        ]
+      },
+      {
+        "region": "Heraklion Area",
+        "count": 1,
+        "resorts": []
+      },
+      {
+        "region": "Kardamena, Kos",
+        "count": 1,
+        "resorts": []
+      },
+      {
+        "region": "Santorini",
+        "count": 1,
+        "resorts": [
+          "Kamari"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Hungary",
+    "count": 9,
+    "regions": [
+      {
+        "region": "Budapest",
+        "count": 9,
+        "resorts": [
+          "Budapest City",
+          "Budapest"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Iceland",
+    "count": 7,
+    "regions": [
+      {
+        "region": "Reykjavik",
+        "count": 6,
+        "resorts": [
+          "Golden Circle",
+          "Grandi by Center Hotels",
+          "Reykjavik City",
+          "Reykjavik City, Center Hotels Laugavegur"
+        ]
+      },
+      {
+        "region": "South & West Iceland",
+        "count": 1,
+        "resorts": []
+      }
+    ]
+  },
+  {
+    "country": "India",
+    "count": 1,
+    "regions": [
+      {
+        "region": "Goa",
+        "count": 1,
+        "resorts": [
+          "Candolim Beach"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Italy",
+    "count": 29,
+    "regions": [
+      {
+        "region": "Lazio",
+        "count": 8,
+        "resorts": [
+          "Rome"
+        ]
+      },
+      {
+        "region": "Lombardy",
+        "count": 7,
+        "resorts": [
+          "Milan",
+          "Bardolino",
+          "Como",
+          "Garda",
+          "Milan City"
+        ]
+      },
+      {
+        "region": "Sicily",
+        "count": 4,
+        "resorts": [
+          "Campofelice Di Roccella",
+          "Noto",
+          "Taormina",
+          "West Sicily"
+        ]
+      },
+      {
+        "region": "Rome",
+        "count": 2,
+        "resorts": [
+          "Greater Rome",
+          "Kolbe Hotel Rome"
+        ]
+      },
+      {
+        "region": "Tuscany",
+        "count": 2,
+        "resorts": [
+          "Florence"
+        ]
+      },
+      {
+        "region": "Garda",
+        "count": 1,
+        "resorts": [
+          "Lake Garda"
+        ]
+      },
+      {
+        "region": "Lake Garda",
+        "count": 1,
+        "resorts": [
+          "Garda"
+        ]
+      },
+      {
+        "region": "Lake Maggiore",
+        "count": 1,
+        "resorts": [
+          "Stresa"
+        ]
+      },
+      {
+        "region": "Milan",
+        "count": 1,
+        "resorts": [
+          "Manin"
+        ]
+      },
+      {
+        "region": "Trentino-Alto Adige",
+        "count": 1,
+        "resorts": [
+          "Riva del Garda"
+        ]
+      },
+      {
+        "region": "Venice",
+        "count": 1,
+        "resorts": [
+          "San Polo"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Jamaica",
+    "count": 6,
+    "regions": [
+      {
+        "region": "Negril (Green Island)",
+        "count": 2,
+        "resorts": [
+          "Princess Grand Jamaica",
+          "Princess Senses The Mangrove"
+        ]
+      },
+      {
+        "region": "Ocho Rios",
+        "count": 2,
+        "resorts": []
+      },
+      {
+        "region": "Montego Bay",
+        "count": 1,
+        "resorts": []
+      },
+      {
+        "region": "Ochos Rios",
+        "count": 1,
+        "resorts": []
+      }
+    ]
+  },
+  {
+    "country": "Majorca",
+    "count": 1,
+    "regions": [
+      {
+        "region": "Balearic Islands",
+        "count": 1,
+        "resorts": [
+          "Alcudia"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Maldives",
+    "count": 6,
+    "regions": [
+      {
+        "region": "Maldives",
+        "count": 4,
+        "resorts": [
+          "Maafushi",
+          "Sun Island Resort",
+          "Villa Park Sun Island"
+        ]
+      },
+      {
+        "region": "Maafushi",
+        "count": 1,
+        "resorts": []
+      },
+      {
+        "region": "Male",
+        "count": 1,
+        "resorts": []
+      }
+    ]
+  },
+  {
+    "country": "Malta",
+    "count": 11,
+    "regions": [
+      {
+        "region": "St Julians",
+        "count": 3,
+        "resorts": [
+          "Hyatt Centric Malta"
+        ]
+      },
+      {
+        "region": "Valletta",
+        "count": 3,
+        "resorts": [
+          "Grand Hotel Excelsior",
+          "The Embassy Valletta Hotel"
+        ]
+      },
+      {
+        "region": "Mellieha",
+        "count": 2,
+        "resorts": [
+          "Luna Holiday Complex"
+        ]
+      },
+      {
+        "region": "Malta and Gozo",
+        "count": 1,
+        "resorts": [
+          "Qawra"
+        ]
+      },
+      {
+        "region": "Mellieha Bay",
+        "count": 1,
+        "resorts": []
+      },
+      {
+        "region": "Sliema",
+        "count": 1,
+        "resorts": []
+      }
+    ]
+  },
+  {
+    "country": "Mauritius",
+    "count": 4,
+    "regions": [
+      {
+        "region": "Belle Mare",
+        "count": 2,
+        "resorts": []
+      },
+      {
+        "region": "Flic en Flac",
+        "count": 1,
+        "resorts": [
+          "Sugar Beach"
+        ]
+      },
+      {
+        "region": "Trou d’Eau Douce",
+        "count": 1,
+        "resorts": []
+      }
+    ]
+  },
+  {
+    "country": "Mexico",
+    "count": 22,
+    "regions": [
+      {
+        "region": "Caribbean Coast",
+        "count": 11,
+        "resorts": [
+          "Puerto Morelos",
+          "Cancun",
+          "Playa del Carmen",
+          "Playacar"
+        ]
+      },
+      {
+        "region": "Riviera Maya",
+        "count": 11,
+        "resorts": [
+          "Grand Palladium Select White Sand",
+          "Bahia Principe Luxury Sian Ka'an",
+          "Catalonia Royal Tulum",
+          "Ocean Maya Royale",
+          "Ocean Riviera Paradise"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Monaco",
+    "count": 1,
+    "regions": [
+      {
+        "region": "Monaco",
+        "count": 1,
+        "resorts": [
+          "Monte Carlo"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Montenegro",
+    "count": 1,
+    "regions": [
+      {
+        "region": "Tivat",
+        "count": 1,
+        "resorts": [
+          "Petrovac"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Morocco",
+    "count": 44,
+    "regions": [
+      {
+        "region": "Agadir",
+        "count": 15,
+        "resorts": [
+          "Iberostar Waves Founty Beach",
+          "Valeria Jardins d Agadir Resort",
+          "Agadir",
+          "Agadir Beach Club",
+          "Allegro Agadir",
+          "Amadil Ocean Club",
+          "Dunes d'Or Ocean Club",
+          "Pickalbatros Palais Des Roses",
+          "Royal Decameron Tafoukt Beach Resort and Spa"
+        ]
+      },
+      {
+        "region": "Marrakech",
+        "count": 11,
+        "resorts": [
+          "Palmeraie",
+          "Be Live Experience Marrakech Palmeraie",
+          "Kenzi Club Agdal Medina",
+          "Marrakech",
+          "Marrakech City",
+          "Medina",
+          "Palm Grove",
+          "Valeria Dar Atlas Resort"
+        ]
+      },
+      {
+        "region": "Marrakech Area",
+        "count": 9,
+        "resorts": [
+          "Palmeraie"
+        ]
+      },
+      {
+        "region": "Agadir Area",
+        "count": 8,
+        "resorts": [
+          "Agadir"
+        ]
+      },
+      {
+        "region": "Agadir and Taghazout",
+        "count": 1,
+        "resorts": []
+      }
+    ]
+  },
+  {
+    "country": "Netherlands",
+    "count": 8,
+    "regions": [
+      {
+        "region": "Amsterdam",
+        "count": 8,
+        "resorts": [
+          "Amsterdam City"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Poland",
+    "count": 7,
+    "regions": [
+      {
+        "region": "Krakow",
+        "count": 5,
+        "resorts": [
+          "Krakow City",
+          "Wine Apartments"
+        ]
+      },
+      {
+        "region": "Krakow City",
+        "count": 1,
+        "resorts": []
+      },
+      {
+        "region": "Lesser Poland",
+        "count": 1,
+        "resorts": [
+          "Krakow"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Portugal",
+    "count": 24,
+    "regions": [
+      {
+        "region": "Algarve",
+        "count": 19,
+        "resorts": [
+          "Albufeira",
+          "Alvor",
+          "Armacao De Pera",
+          "Praia da Rocha",
+          "Praia do Vau",
+          "Quarteira",
+          "Vale De Parra"
+        ]
+      },
+      {
+        "region": "Madeira",
+        "count": 3,
+        "resorts": [
+          "Funchal",
+          "Canico"
+        ]
+      },
+      {
+        "region": "Lisbon",
+        "count": 1,
+        "resorts": [
+          "Lisbon City"
+        ]
+      },
+      {
+        "region": "Porto",
+        "count": 1,
+        "resorts": []
+      }
+    ]
+  },
+  {
+    "country": "Slovakia",
+    "count": 1,
+    "regions": [
+      {
+        "region": "Bratislava",
+        "count": 1,
+        "resorts": []
+      }
+    ]
+  },
+  {
+    "country": "Spain",
+    "count": 438,
+    "regions": [
+      {
+        "region": "Canary Islands",
+        "count": 107,
+        "resorts": [
+          "Playa Blanca",
+          "Costa Adeje",
+          "Tenerife",
+          "Playa De Las Americas",
+          "Playa Del Ingles",
+          "Costa Teguise",
+          "Fuerteventura",
+          "Lanzarote",
+          "Playa Taurito",
+          "Jandia",
+          "Lanzarote (Arrecife)",
+          "Los Cristianos",
+          "Golf Del Sur",
+          "Gran Canaria",
+          "Las Palmas City",
+          "Maspalomas",
+          "Matagorda (Puerto Del Carmen)",
+          "Playa del Ingles",
+          "Playa Paraiso",
+          "Puerto Rico",
+          "Arguineguin",
+          "Caleta De Fuste",
+          "Corralejo",
+          "Gran Canaria (Las Palmas)",
+          "Jandia, Fuerteventura",
+          "Playa De Jandia",
+          "Puerto Calero",
+          "Puerto de la Cruz",
+          "Puerto De La Cruz",
+          "San Agustin"
+        ]
+      },
+      {
+        "region": "Tenerife",
+        "count": 56,
+        "resorts": [
+          "Costa Adeje",
+          "Playa De Las Americas",
+          "Los Cristianos",
+          "Los Gigantes",
+          "Golf Del Sur",
+          "Puerto De La Cruz",
+          "El Medano",
+          "Playa De La Arena",
+          "Puerto de Santiago"
+        ]
+      },
+      {
+        "region": "Balearic Islands",
+        "count": 44,
+        "resorts": [
+          "Alcudia",
+          "Majorca",
+          "Cala'n Forcat",
+          "Santa Ponsa",
+          "Cala Millor",
+          "Sa Coma",
+          "Cala Bona",
+          "Cala'n Bosch",
+          "C'an Picafort",
+          "Cala D'Or",
+          "Cala Mondrago",
+          "Calas De Mallorca",
+          "Es Cana",
+          "Magalluf",
+          "Magaluf",
+          "Majorca (Palma)",
+          "Mallorca",
+          "Palma de Mallorca",
+          "Playa Es Cana",
+          "Porto Cristo",
+          "Portopetro",
+          "San Antonio Bay"
+        ]
+      },
+      {
+        "region": "Majorca",
+        "count": 43,
+        "resorts": [
+          "Calas De Mallorca",
+          "Alcudia",
+          "Magaluf",
+          "Palma Nova",
+          "Playa De Muro",
+          "Puerto Pollensa",
+          "Cala Millor",
+          "Santa Ponsa",
+          "Cabo Blanco",
+          "Cala Mesquida",
+          "Cala Mayor",
+          "Palma City",
+          "Porto Petro"
+        ]
+      },
+      {
+        "region": "Costa Blanca",
+        "count": 38,
+        "resorts": [
+          "Benidorm",
+          "Playa de Albir",
+          "Alicante",
+          "Alicante City",
+          "Calpe"
+        ]
+      },
+      {
+        "region": "Lanzarote",
+        "count": 34,
+        "resorts": [
+          "Playa Blanca",
+          "Costa Teguise",
+          "Matagorda",
+          "Puerto Del Carmen",
+          "Arrecife",
+          "Playa De Los Pocillos",
+          "Playa De Los Pocillos (Puerto Del Carmen)"
+        ]
+      },
+      {
+        "region": "Fuerteventura",
+        "count": 27,
+        "resorts": [
+          "Corralejo",
+          "Costa Calma",
+          "Costa Caleta",
+          "Costa de Antigua",
+          "Playa De Jandia",
+          "Caleta De Fuste",
+          "El Cotillo",
+          "Jandia"
+        ]
+      },
+      {
+        "region": "Gran Canaria",
+        "count": 22,
+        "resorts": [
+          "Playa Taurito",
+          "Playa Del Ingles",
+          "Puerto Rico",
+          "Playa del Ingles",
+          "Maspalomas",
+          "Meloneras"
+        ]
+      },
+      {
+        "region": "Balearics",
+        "count": 14,
+        "resorts": [
+          "Playa De Muro",
+          "Cala D'Or",
+          "Majorca (Palma)",
+          "Calas De Mallorca",
+          "Can Picafort",
+          "Magalluf",
+          "Palma City",
+          "Punta Prima",
+          "San Antonio",
+          "Santa Ponsa"
+        ]
+      },
+      {
+        "region": "Catalonia",
+        "count": 11,
+        "resorts": [
+          "Barcelona",
+          "Salou",
+          "Barcelona City",
+          "Cap Salou",
+          "Costa Brava",
+          "La Pineda",
+          "PortAventura"
+        ]
+      },
+      {
+        "region": "Costa Del Sol",
+        "count": 11,
+        "resorts": [
+          "Benalmadena",
+          "Puerto Banus",
+          "Torremolinos"
+        ]
+      },
+      {
+        "region": "Menorca",
+        "count": 5,
+        "resorts": [
+          "Cala'n Forcat",
+          "Arenal de'n Castell",
+          "Punta Prima",
+          "Son Bou"
+        ]
+      },
+      {
+        "region": "Andalucia",
+        "count": 4,
+        "resorts": [
+          "Benalmadena",
+          "Fuengirola",
+          "Malaga",
+          "Mijas"
+        ]
+      },
+      {
+        "region": "Ibiza",
+        "count": 4,
+        "resorts": [
+          "San Antonio",
+          "Playa Es Cana",
+          "San Miguel (Ibiza)"
+        ]
+      },
+      {
+        "region": "Costa del Sol",
+        "count": 3,
+        "resorts": [
+          "Benalmadena",
+          "Benalmádena",
+          "Torremolinos"
+        ]
+      },
+      {
+        "region": "Costa Dorada",
+        "count": 3,
+        "resorts": [
+          "Salou",
+          "La Pineda"
+        ]
+      },
+      {
+        "region": "Costa Brava",
+        "count": 2,
+        "resorts": [
+          "Lloret de Mar",
+          "Lloret De Mar"
+        ]
+      },
+      {
+        "region": "Costa De Almeria",
+        "count": 2,
+        "resorts": [
+          "Roquetas De Mar"
+        ]
+      },
+      {
+        "region": "Valencia Region",
+        "count": 2,
+        "resorts": [
+          "Benidorm"
+        ]
+      },
+      {
+        "region": "Alicante",
+        "count": 1,
+        "resorts": [
+          "Benidorm"
+        ]
+      },
+      {
+        "region": "Andalusia",
+        "count": 1,
+        "resorts": [
+          "Roquetas de Mar"
+        ]
+      },
+      {
+        "region": "Madrid",
+        "count": 1,
+        "resorts": [
+          "Madrid City"
+        ]
+      },
+      {
+        "region": "Mallorca",
+        "count": 1,
+        "resorts": [
+          "Cala d'Or"
+        ]
+      },
+      {
+        "region": "Valencia",
+        "count": 1,
+        "resorts": [
+          "Benidorm"
+        ]
+      },
+      {
+        "region": "Valencian Community",
+        "count": 1,
+        "resorts": [
+          "Benidorm"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Switzerland",
+    "count": 1,
+    "regions": [
+      {
+        "region": "Geneva",
+        "count": 1,
+        "resorts": [
+          "Geneva City"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Tanzania",
+    "count": 2,
+    "regions": [
+      {
+        "region": "Kiwengwa",
+        "count": 1,
+        "resorts": [
+          "Zanzibar"
+        ]
+      },
+      {
+        "region": "Zanzibar",
+        "count": 1,
+        "resorts": [
+          "Michamvi Kae"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Tunisia",
+    "count": 19,
+    "regions": [
+      {
+        "region": "Skanes",
+        "count": 6,
+        "resorts": [
+          "One Resort Aqua Park",
+          "One Resort Aqua Park and Spa",
+          "One Resort Jockey",
+          "Sahara Beach Aquapark"
+        ]
+      },
+      {
+        "region": "Sousse",
+        "count": 6,
+        "resorts": [
+          "JAZ Tour Khalef",
+          "Marhaba Club",
+          "Occidental Sousse Marhaba"
+        ]
+      },
+      {
+        "region": "Hammamet",
+        "count": 4,
+        "resorts": [
+          "Bel Azur Thalasso and Bungalows"
+        ]
+      },
+      {
+        "region": "Djerba",
+        "count": 2,
+        "resorts": [
+          "Mezraia",
+          "Midoun"
+        ]
+      },
+      {
+        "region": "Tunisia Area",
+        "count": 1,
+        "resorts": [
+          "Skanes"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Turkey",
+    "count": 183,
+    "regions": [
+      {
+        "region": "Antalya Area",
+        "count": 42,
+        "resorts": [
+          "Nr Alanya",
+          "Side",
+          "Lara Beach",
+          "Belek",
+          "Kemer",
+          "Alanya",
+          "Kaleici",
+          "Kargicak",
+          "Sorgun"
+        ]
+      },
+      {
+        "region": "Dalaman Area",
+        "count": 42,
+        "resorts": [
+          "Marmaris",
+          "Sarigerme",
+          "Ovacik",
+          "Calis",
+          "Fethiye",
+          "Icmeler"
+        ]
+      },
+      {
+        "region": "Antalya",
+        "count": 33,
+        "resorts": [
+          "Alanya",
+          "Side",
+          "Belek",
+          "Lara",
+          "Lara Beach",
+          "Kaleici",
+          "Kemer"
+        ]
+      },
+      {
+        "region": "Bodrum Area",
+        "count": 28,
+        "resorts": [
+          "Didim",
+          "Akbuk",
+          "Altinkum",
+          "Didim - Bodrum Area",
+          "Guvercinlik"
+        ]
+      },
+      {
+        "region": "Izmir Area",
+        "count": 11,
+        "resorts": [
+          "Kusadasi",
+          "Didim"
+        ]
+      },
+      {
+        "region": "Dalaman",
+        "count": 10,
+        "resorts": [
+          "Hisaronu",
+          "Icmeler",
+          "Ovacik",
+          "Dalyan",
+          "Marmaris"
+        ]
+      },
+      {
+        "region": "Bodrum",
+        "count": 5,
+        "resorts": [
+          "Altinkum",
+          "Akbuk",
+          "Bodrum Holiday Resort"
+        ]
+      },
+      {
+        "region": "Marmaris",
+        "count": 5,
+        "resorts": [
+          "Club Cettia Apartments",
+          "Marmaris"
+        ]
+      },
+      {
+        "region": "Izmir",
+        "count": 2,
+        "resorts": [
+          "Kusadasi"
+        ]
+      },
+      {
+        "region": "Mugla",
+        "count": 2,
+        "resorts": [
+          "Hisaronu",
+          "Olu Deniz"
+        ]
+      },
+      {
+        "region": "Dalaman area",
+        "count": 1,
+        "resorts": [
+          "Marmaris"
+        ]
+      },
+      {
+        "region": "Didim - Bodrum Area",
+        "count": 1,
+        "resorts": []
+      },
+      {
+        "region": "Olu Deniz",
+        "count": 1,
+        "resorts": []
+      }
+    ]
+  },
+  {
+    "country": "United Arab Emirates",
+    "count": 6,
+    "regions": [
+      {
+        "region": "Dubai",
+        "count": 4,
+        "resorts": [
+          "Dubai Creek",
+          "Dubai Marina",
+          "Mina Seyahi Beach Resort",
+          "Palm Jumeirah"
+        ]
+      },
+      {
+        "region": "Abu Dhabi",
+        "count": 2,
+        "resorts": [
+          "Rixos Marina",
+          "Saadiyat Public Beach"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "United Kingdom",
+    "count": 3,
+    "regions": [
+      {
+        "region": "London",
+        "count": 1,
+        "resorts": []
+      },
+      {
+        "region": "Manchester",
+        "count": 1,
+        "resorts": [
+          "Cruise"
+        ]
+      },
+      {
+        "region": "Scotland",
+        "count": 1,
+        "resorts": [
+          "Edinburgh City"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "United States of America",
+    "count": 5,
+    "regions": [
+      {
+        "region": "New York",
+        "count": 4,
+        "resorts": [
+          "Greenwich Village",
+          "Sanctuary Hotel"
+        ]
+      },
+      {
+        "region": "Florida",
+        "count": 1,
+        "resorts": [
+          "International Drive"
+        ]
+      }
+    ]
+  }
+]

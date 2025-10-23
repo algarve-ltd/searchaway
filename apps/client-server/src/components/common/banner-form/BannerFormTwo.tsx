@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useRef, useState } from "react";
 import { useSearch } from "@/contexts/SearchContext";
+import DestinationModal from "@/components/common/DestinationModal";
 
 interface DropdownOption {
    value: string;
@@ -19,19 +20,6 @@ const departureAirportOptions: DropdownOption[] = [
    { value: "BRS", label: "Bristol (BRS)" },
    { value: "GLA", label: "Glasgow (GLA)" },
    { value: "BFS", label: "Belfast International (BFS)" }
-];
-
-const destinationOptions: DropdownOption[] = [
-   { value: "germany", label: "Germany" },
-   { value: "france", label: "France" },
-   { value: "italy", label: "Italy" },
-   { value: "spain", label: "Spain" },
-   { value: "poland", label: "Poland" },
-   { value: "romania", label: "Romania" },
-   { value: "netherlands", label: "Netherlands" },
-   { value: "belgium", label: "Belgium" },
-   { value: "greece", label: "Greece" },
-   { value: "czechia", label: "Czechia" }
 ];
 
 const nightsOptions: DropdownOption[] = [
@@ -57,12 +45,11 @@ const BannerFormTwo = () => {
    const { filters, updateFilters, searchQuotes } = useSearch();
 
    const [departureAirportOpen, setDepartureAirportOpen] = useState(false);
-   const [destinationOpen, setDestinationOpen] = useState(false);
+   const [destinationModalOpen, setDestinationModalOpen] = useState(false);
    const [nightsOpen, setNightsOpen] = useState(false);
    const [priceOpen, setPriceOpen] = useState(false);
 
    const departureAirportRef = useRef<HTMLDivElement>(null);
-   const destinationRef = useRef<HTMLDivElement>(null);
    const nightsRef = useRef<HTMLDivElement>(null);
    const priceRef = useRef<HTMLDivElement>(null);
 
@@ -70,9 +57,6 @@ const BannerFormTwo = () => {
       const handleClickOutside = (event: MouseEvent) => {
          if (departureAirportRef.current && !departureAirportRef.current.contains(event.target as Node)) {
             setDepartureAirportOpen(false);
-         }
-         if (destinationRef.current && !destinationRef.current.contains(event.target as Node)) {
-            setDestinationOpen(false);
          }
          if (nightsRef.current && !nightsRef.current.contains(event.target as Node)) {
             setNightsOpen(false);
@@ -93,9 +77,24 @@ const BannerFormTwo = () => {
       setDepartureAirportOpen(false);
    };
 
-   const handleDestinationSelect = (value: string) => {
-      updateFilters({ country: value });
-      setDestinationOpen(false);
+   const handleDestinationSave = (selections: {
+      countries: string[];
+      regions: string[];
+      resorts: string[];
+   }) => {
+      updateFilters({ 
+         countries: selections.countries,
+         regions: selections.regions,
+         resorts: selections.resorts
+      });
+   };
+
+   const getDestinationLabel = () => {
+      const totalSelections = (filters.countries?.length || 0) + (filters.regions?.length || 0) + (filters.resorts?.length || 0);
+      if (totalSelections === 0) {
+         return "Select destination...";
+      }
+      return `${totalSelections} destination${totalSelections === 1 ? '' : 's'} selected`;
    };
 
    const handleNightsSelect = (value: string) => {
@@ -121,6 +120,7 @@ const BannerFormTwo = () => {
 
 
    return (
+      <>
       <form onSubmit={handleSearch}>
          <div className="tg-booking-form-input-group d-flex align-items-end justify-content-between">
             {/* Departure Airport Dropdown */}
@@ -148,22 +148,13 @@ const BannerFormTwo = () => {
             {/* Destination Dropdown */}
             <div className="tg-booking-form-parent-inner tg-hero-quantity p-relative mr-15 mb-15">
                <span className="tg-booking-form-title mb-5">Destination:</span>
-               <div ref={destinationRef} onClick={() => setDestinationOpen(!destinationOpen)} className={`tg-booking-add-input-field tg-booking-quantity-toggle ${destinationOpen ? "active" : ""}`}>
-                  <span className="tg-booking-title-value">{getSelectedLabel(destinationOptions, filters.country, "Select destination...")}</span>
+               <div onClick={() => setDestinationModalOpen(true)} className="tg-booking-add-input-field tg-booking-quantity-toggle" style={{ cursor: 'pointer' }}>
+                  <span className="tg-booking-title-value">{getDestinationLabel()}</span>
                   <span className="location">
                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1L6 6L11 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                      </svg>
                   </span>
-               </div>
-               <div className={`tg-booking-form-location-list tg-booking-quantity-active ${destinationOpen ? "tg-list-open" : ""}`}>
-                  <ul className="scrool-bar scrool-height pr-5">
-                     {destinationOptions.map((option) => (
-                        <li key={option.value} onClick={() => handleDestinationSelect(option.value)}>
-                           <span>{option.label}</span>
-                        </li>
-                     ))}
-                  </ul>
                </div>
             </div>
 
@@ -229,6 +220,19 @@ const BannerFormTwo = () => {
             </div>
          </div>
       </form>
+
+      {/* Destination Selection Modal */}
+      <DestinationModal
+         isOpen={destinationModalOpen}
+         onClose={() => setDestinationModalOpen(false)}
+         onSave={handleDestinationSave}
+         initialSelections={{
+            countries: filters.countries || [],
+            regions: filters.regions || [],
+            resorts: filters.resorts || []
+         }}
+      />
+      </>
    )
 }
 
