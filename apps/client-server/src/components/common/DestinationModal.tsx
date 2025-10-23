@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import destinationData from "@/data/DestinationData.json";
 
