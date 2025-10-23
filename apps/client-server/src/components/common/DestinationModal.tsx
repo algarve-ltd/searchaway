@@ -42,7 +42,6 @@ interface DestinationModalProps {
 const DestinationModal = ({ isOpen, onClose, onSave }: DestinationModalProps) => {
    const [countries, setCountries] = useState<Country[]>([]);
    const [mounted, setMounted] = useState(false);
-   const lastToggleRef = useRef<{ countryIndex: number; regionIndex: number; time: number } | null>(null);
 
    useEffect(() => {
       setMounted(true);
@@ -189,26 +188,6 @@ const DestinationModal = ({ isOpen, onClose, onSave }: DestinationModalProps) =>
          });
          return newCountries;
       });
-   };
-
-   const getTotalSelections = () => {
-      let total = 0;
-      countries.forEach(country => {
-         if (country.selected) {
-            total++; // Count the country
-         }
-         country.regions.forEach(region => {
-            if (region.selected) {
-               total++; // Count the region
-            }
-            region.resortSelections.forEach(resort => {
-               if (resort.selected) {
-                  total++; // Count the resort
-               }
-            });
-         });
-      });
-      return total;
    };
 
    if (!isOpen || !mounted) return null;
