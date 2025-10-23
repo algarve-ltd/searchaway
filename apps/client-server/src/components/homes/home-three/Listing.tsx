@@ -89,11 +89,12 @@ const tab_title: TabData[] = [
 ];
 
 const Listing = () => {
-   const { quotes, loading, error, pagination, updateFilters, loadMore } = useSearch();
+   const { quotes, loading, error, pagination, filters, updateFilters, loadMore, searchQuotes } = useSearch();
    const isotope = useRef<Isotope | null>(null);
    const [filterKey, setFilterKey] = useState("*");
    const [transformedQuotes, setTransformedQuotes] = useState<ListingDataType[]>([]);
    const [imageErrors, setImageErrors] = useState<{ [key: string]: boolean }>({});
+   const [shouldTriggerSearch, setShouldTriggerSearch] = useState(false);
 
    // Transform quotes when they change
    useEffect(() => {
@@ -130,11 +131,33 @@ const Listing = () => {
 
    const [selectedFilter, setSelectedFilter] = useState("*");
 
+   // Sync selectedFilter with context on mount or when holidayType changes from search bar
+   useEffect(() => {
+      if (filters.holidayType) {
+         setSelectedFilter(filters.holidayType);
+         setFilterKey(filters.holidayType);
+      } else {
+         setSelectedFilter("*");
+         setFilterKey("*");
+      }
+   }, [filters.holidayType]);
+
+   // Trigger search after filter update
+   useEffect(() => {
+      if (shouldTriggerSearch) {
+         searchQuotes();
+         setShouldTriggerSearch(false);
+      }
+   }, [filters.holidayType, shouldTriggerSearch, searchQuotes]);
+
    const handleFilterKeyChange = (key: string) => () => {
       setFilterKey(key);
       setSelectedFilter(key);
       // Update search context with holiday type filter
-      updateFilters({ holidayType: key === "*" ? "" : key });
+      const holidayTypeValue = key === "*" ? "" : key;
+      updateFilters({ holidayType: holidayTypeValue });
+      // Flag to trigger search after filter updates
+      setShouldTriggerSearch(true);
    };
 
    const handleLoadMore = async () => {
