@@ -80,14 +80,14 @@ const DestinationModal = ({ isOpen, onClose, onSave }: DestinationModalProps) =>
 
    const toggleCountry = (countryIndex: number) => {
       setCountries(prev => {
-         const newCountries = [...prev];
+         const newCountries = JSON.parse(JSON.stringify(prev));
          const country = newCountries[countryIndex];
          const newSelected = !country.selected;
          
          country.selected = newSelected;
-         country.regions.forEach(region => {
+         country.regions.forEach((region: Region) => {
             region.selected = newSelected;
-            region.resortSelections.forEach(resort => {
+            region.resortSelections.forEach((resort: Resort) => {
                resort.selected = newSelected;
             });
          });
@@ -98,17 +98,17 @@ const DestinationModal = ({ isOpen, onClose, onSave }: DestinationModalProps) =>
 
    const toggleRegion = (countryIndex: number, regionIndex: number) => {
       setCountries(prev => {
-         const newCountries = [...prev];
+         const newCountries = JSON.parse(JSON.stringify(prev));
          const region = newCountries[countryIndex].regions[regionIndex];
          const newSelected = !region.selected;
          
          region.selected = newSelected;
-         region.resortSelections.forEach(resort => {
+         region.resortSelections.forEach((resort: Resort) => {
             resort.selected = newSelected;
          });
          
          // Update country selection state
-         const allRegionsSelected = newCountries[countryIndex].regions.every(r => r.selected);
+         const allRegionsSelected = newCountries[countryIndex].regions.every((r: Region) => r.selected);
          newCountries[countryIndex].selected = allRegionsSelected;
          
          return newCountries;
@@ -117,17 +117,17 @@ const DestinationModal = ({ isOpen, onClose, onSave }: DestinationModalProps) =>
 
    const toggleResort = (countryIndex: number, regionIndex: number, resortIndex: number) => {
       setCountries(prev => {
-         const newCountries = [...prev];
+         const newCountries = JSON.parse(JSON.stringify(prev));
          const resort = newCountries[countryIndex].regions[regionIndex].resortSelections[resortIndex];
          resort.selected = !resort.selected;
          
          // Update region selection state
          const region = newCountries[countryIndex].regions[regionIndex];
-         const allResortsSelected = region.resortSelections.every(r => r.selected);
+         const allResortsSelected = region.resortSelections.every((r: Resort) => r.selected);
          region.selected = allResortsSelected;
          
          // Update country selection state
-         const allRegionsSelected = newCountries[countryIndex].regions.every(r => r.selected);
+         const allRegionsSelected = newCountries[countryIndex].regions.every((r: Region) => r.selected);
          newCountries[countryIndex].selected = allRegionsSelected;
          
          return newCountries;
@@ -169,18 +169,19 @@ const DestinationModal = ({ isOpen, onClose, onSave }: DestinationModalProps) =>
    };
 
    const handleClear = () => {
-      setCountries(prev => prev.map(country => ({
-         ...country,
-         selected: false,
-         regions: country.regions.map(region => ({
-            ...region,
-            selected: false,
-            resortSelections: region.resortSelections.map(resort => ({
-               ...resort,
-               selected: false
-            }))
-         }))
-      })));
+      setCountries(prev => {
+         const newCountries = JSON.parse(JSON.stringify(prev));
+         newCountries.forEach((country: Country) => {
+            country.selected = false;
+            country.regions.forEach((region: Region) => {
+               region.selected = false;
+               region.resortSelections.forEach((resort: Resort) => {
+                  resort.selected = false;
+               });
+            });
+         });
+         return newCountries;
+      });
    };
 
    const getTotalSelections = () => {
