@@ -73,7 +73,7 @@ const BannerFormTwo = () => {
    }, []);
 
    const handleDepartureAirportSelect = (value: string) => {
-      updateFilters({ destination: value }); // Using destination field for departure airport code
+      updateFilters({ departureAirport: value });
       setDepartureAirportOpen(false);
    };
 
@@ -127,7 +127,7 @@ const BannerFormTwo = () => {
             <div className="tg-booking-form-parent-inner tg-hero-quantity p-relative mr-15 mb-15">
                <span className="tg-booking-form-title mb-5">Departure Airport:</span>
                <div ref={departureAirportRef} onClick={() => setDepartureAirportOpen(!departureAirportOpen)} className={`tg-booking-add-input-field tg-booking-quantity-toggle ${departureAirportOpen ? "active" : ""}`}>
-                  <span className="tg-booking-title-value">{getSelectedLabel(departureAirportOptions, filters.destination, "Select airport...")}</span>
+                  <span className="tg-booking-title-value">{getSelectedLabel(departureAirportOptions, filters.departureAirport, "Select airport...")}</span>
                   <span className="location">
                      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1L6 6L11 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

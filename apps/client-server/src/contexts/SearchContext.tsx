@@ -6,6 +6,7 @@ export interface SearchFilters {
   nights: string;
   people: string;
   destination: string;
+  departureAirport: string;
   priceRange: string;
   departureDate: string;
   holidayType: string; // For holiday type filtering
@@ -36,6 +37,7 @@ const defaultFilters: SearchFilters = {
   nights: '',
   people: '',
   destination: '',
+  departureAirport: '',
   priceRange: '',
   departureDate: '',
   holidayType: '',
@@ -82,6 +84,7 @@ export const SearchProvider: React.FC<SearchProviderProps> = ({ children }) => {
     if (filters.people) params.append('people', filters.people);
     if (filters.priceRange) params.append('priceRange', filters.priceRange);
     if (filters.departureDate) params.append('departureDate', filters.departureDate);
+    if (filters.departureAirport) params.append('departureAirport', filters.departureAirport);
     if (filters.destination) params.append('destination', filters.destination);
     if (filters.holidayType) params.append('holidayType', filters.holidayType);
     
@@ -167,10 +170,11 @@ export const SearchProvider: React.FC<SearchProviderProps> = ({ children }) => {
   //   }
   // }, [filters, searchQuotes]);
 
-  // Load initial quotes on mount
+  // Load initial quotes on mount only
   useEffect(() => {
     fetchQuotes(1, false);
-  }, [fetchQuotes]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Empty dependency array - only run on mount
 
   // All filtering is now handled server-side by the API
 

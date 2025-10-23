@@ -79,10 +79,12 @@ const DestinationModal = ({ isOpen, onClose, onSave }: DestinationModalProps) =>
    }, [isOpen]);
 
    const toggleCountry = (countryIndex: number) => {
+      console.log('toggleCountry called', countryIndex);
       setCountries(prev => {
          const newCountries = JSON.parse(JSON.stringify(prev));
          const country = newCountries[countryIndex];
          const newSelected = !country.selected;
+         console.log('Country toggle:', country.country, 'from', country.selected, 'to', newSelected);
          
          country.selected = newSelected;
          country.regions.forEach((region: Region) => {
@@ -97,10 +99,12 @@ const DestinationModal = ({ isOpen, onClose, onSave }: DestinationModalProps) =>
    };
 
    const toggleRegion = (countryIndex: number, regionIndex: number) => {
+      console.log('toggleRegion called', countryIndex, regionIndex);
       setCountries(prev => {
          const newCountries = JSON.parse(JSON.stringify(prev));
          const region = newCountries[countryIndex].regions[regionIndex];
          const newSelected = !region.selected;
+         console.log('Region toggle:', region.region, 'from', region.selected, 'to', newSelected);
          
          region.selected = newSelected;
          region.resortSelections.forEach((resort: Resort) => {
@@ -148,6 +152,8 @@ const DestinationModal = ({ isOpen, onClose, onSave }: DestinationModalProps) =>
       const selectedRegions: string[] = [];
       const selectedResorts: string[] = [];
 
+      console.log('Countries state:', countries);
+
       countries.forEach(country => {
          if (country.selected) {
             selectedCountries.push(country.country);
@@ -164,6 +170,7 @@ const DestinationModal = ({ isOpen, onClose, onSave }: DestinationModalProps) =>
          });
       });
 
+      console.log('Saving selections:', { countries: selectedCountries, regions: selectedRegions, resorts: selectedResorts });
       onSave({ countries: selectedCountries, regions: selectedRegions, resorts: selectedResorts });
       onClose();
    };
@@ -188,20 +195,18 @@ const DestinationModal = ({ isOpen, onClose, onSave }: DestinationModalProps) =>
       let total = 0;
       countries.forEach(country => {
          if (country.selected) {
-            total++;
-         } else {
-            country.regions.forEach(region => {
-               if (region.selected) {
-                  total++;
-               } else {
-                  region.resortSelections.forEach(resort => {
-                     if (resort.selected) {
-                        total++;
-                     }
-                  });
+            total++; // Count the country
+         }
+         country.regions.forEach(region => {
+            if (region.selected) {
+               total++; // Count the region
+            }
+            region.resortSelections.forEach(resort => {
+               if (resort.selected) {
+                  total++; // Count the resort
                }
             });
-         }
+         });
       });
       return total;
    };
@@ -254,7 +259,7 @@ const DestinationModal = ({ isOpen, onClose, onSave }: DestinationModalProps) =>
                borderTopRightRadius: '8px'
             }} onClick={(e) => e.stopPropagation()}>
                <h2 style={{ color: 'white', fontWeight: '600', fontSize: '18px', margin: 0 }}>
-                  {getTotalSelections()} destination{getTotalSelections() === 1 ? '' : 's'} selected
+                  Select Destinations
                </h2>
                <button
                   onClick={onClose}
