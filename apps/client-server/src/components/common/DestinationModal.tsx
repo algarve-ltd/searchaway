@@ -346,10 +346,10 @@ const DestinationModal = ({ isOpen, onClose, onSave }: DestinationModalProps) =>
                      color: '#64748b',
                      fontSize: '14px'
                   }}>
-                     No destinations found matching "{searchTerm}"
+                     No destinations found matching &ldquo;{searchTerm}&rdquo;
                   </div>
                ) : (
-                  filteredCountries.map((country, countryIndex) => {
+                  filteredCountries.map((country) => {
                      // Find the original country index for state updates
                      const originalCountryIndex = countries.findIndex(c => c.country === country.country);
                      
@@ -396,7 +396,7 @@ const DestinationModal = ({ isOpen, onClose, onSave }: DestinationModalProps) =>
                            </div>
 
                            {/* Regions under Country */}
-                           {country.regions.map((region, regionIndex) => {
+                           {country.regions.map((region) => {
                               // Find the original region index
                               const originalRegionIndex = countries[originalCountryIndex].regions.findIndex(r => r.region === region.region);
                               
@@ -486,7 +486,7 @@ const DestinationModal = ({ isOpen, onClose, onSave }: DestinationModalProps) =>
                                     {/* Resorts under Region */}
                                     {region.expanded && region.resortSelections.length > 0 && (
                                        <div style={{ marginLeft: '24px', marginTop: '4px' }}>
-                                          {region.resortSelections.map((resort, resortIndex) => {
+                                          {region.resortSelections.map((resort) => {
                                              // Find the original resort index
                                              const originalResortIndex = countries[originalCountryIndex].regions[originalRegionIndex].resortSelections.findIndex(r => r.name === resort.name);
                                              
