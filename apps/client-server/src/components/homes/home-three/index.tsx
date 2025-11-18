@@ -13,7 +13,6 @@ const HomeThree = () => {
          <HeaderThree />
          <main>
             <Banner />
-            <BannerFormThree />
             <Listing />
             {/* <CtaThree /> */}
             {/* <Location /> */}

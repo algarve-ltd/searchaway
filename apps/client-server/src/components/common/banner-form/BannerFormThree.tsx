@@ -13,7 +13,7 @@ const BannerFormThree = () => {
 
 
    return (
-      <div className="tg-booking-form-area tg-booking-form-space">
+      <>
          <div className="container">
             <div className="row">
                <div className="col-lg-12">
@@ -31,7 +31,7 @@ const BannerFormThree = () => {
                </div>
             </div>
          </div>
-      </div>
+      </>
    )
 }
 

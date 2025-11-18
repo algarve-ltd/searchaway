@@ -59,6 +59,21 @@ const tab_title: TabData[] = [
       category: "Luxury",
    },
    {
+      icon: (<><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9 1L11.5 6.5L17.5 7.5L13 12L14 18L9 15L4 18L5 12L0.5 7.5L6.5 6.5L9 1Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg></>),
+      title: "Adventure",
+      category: "Adventure",
+   },
+   {
+      icon: (<><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9 16C12.866 16 16 12.866 16 9C16 5.13401 12.866 2 9 2C5.13401 2 2 5.13401 2 9C2 12.866 5.13401 16 9 16Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+         <path d="M9 6V9L11 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg></>),
+      title: "Sport Holidays",
+      category: "Sport Holidays",
+   },
+   {
       icon: (<><svg width="15" height="19" viewBox="0 0 15 19" fill="none" xmlns="http://www.w3.org/2000/svg">
          <path d="M1.5 17.5H14.3M11.9 7.1H9.5M12.7 10.3H9.5M12.7 13.5H9.5M3.1 17.5V2.46C3.1 1.8392 3.4768 1.5 4.06 1.5C5.3976 1.5 6.0664 1.5 6.6264 1.588C8.12821 1.82593 9.51614 2.53322 10.5913 3.60848C11.6664 4.68373 12.3735 6.07176 12.6112 7.5736C12.7 8.1336 12.7 8.8024 12.7 10.14V17.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
       </svg></>),
@@ -186,14 +201,14 @@ const Listing = () => {
 
 
    return (
-      <div className="tg-listing-area tg-grey-bg pt-120 pb-40 z-index-9">
+      <div className="tg-listing-area tg-grey-bg pt-60 pb-40 z-index-9">
 
          <div className="container">
             <div className="row">
                <div className="col-12">
                   <div className="tg-listing-section-title text-center mb-35">
-                     <h5 className="tg-section-subtitle wow fadeInUp" data-wow-delay=".3s" data-wow-duration=".5s">Most Popular Tour Packages </h5>
-                     <h2 className="mb-15 wow fadeInUp" data-wow-delay=".4s" data-wow-duration=".6s">Something Amazing Waiting For you</h2>
+                     <h5 className="tg-section-subtitle wow fadeInUp" data-wow-delay=".3s" data-wow-duration=".5s">Hand picked holidays</h5>
+                     <p className="mb-15 wow fadeInUp" data-wow-delay=".4s" data-wow-duration=".6s" style={{ fontSize: '16px', color: '#666' }}>Every holiday on SearchAway is a real quote from an independent UK travel advisor.<br />Researched, priced, and packaged by a professional</p>
                   </div>
                </div>
                <div className="col-lg-12">
@@ -274,78 +289,18 @@ const Listing = () => {
                                  {item.tag && <span className="tg-listing-item-price-discount shape">{item.tag}</span>}
                               </div>
                               <div className="tg-listing-card-content">
-                                 <h4 className="tg-listing-card-title text-dark" style={{
-                                    display: 'block',
-                                    overflow: 'hidden',
-                                    textOverflow: 'ellipsis',
-                                    whiteSpace: 'nowrap'
-                                 }}>{item.title}</h4>
-                              <div className="tg-listing-card-duration-tour">
-                                 <span className="tg-listing-card-duration-map mb-5" style={{
-                                    display: 'block',
-                                    overflow: 'hidden',
-                                    textOverflow: 'ellipsis',
-                                    whiteSpace: 'nowrap'
-                                 }}>
-                                    <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                       <path d="M12.3329 6.7071C12.3329 11.2324 6.55512 15.1111 6.55512 15.1111C6.55512 15.1111 0.777344 11.2324 0.777344 6.7071C0.777344 5.16402 1.38607 3.68414 2.46962 2.59302C3.55316 1.5019 5.02276 0.888916 6.55512 0.888916C8.08748 0.888916 9.55708 1.5019 10.6406 2.59302C11.7242 3.68414 12.3329 5.16402 12.3329 6.7071Z" stroke="currentColor" strokeWidth="1.15556" strokeLinecap="round" strokeLinejoin="round" />
-                                       <path d="M6.55512 8.64649C7.61878 8.64649 8.48105 7.7782 8.48105 6.7071C8.48105 5.636 7.61878 4.7677 6.55512 4.7677C5.49146 4.7677 4.6292 5.636 4.6292 6.7071C4.6292 7.7782 5.49146 8.64649 6.55512 8.64649Z" stroke="currentColor" strokeWidth="1.15556" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                    {item.location}
-                                 </span>
-                                 <span className="tg-listing-card-duration-time">
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                       <path d="M8.00175 3.73329V7.99996L10.8462 9.42218M15.1128 8.00003C15.1128 11.9274 11.9291 15.1111 8.00174 15.1111C4.07438 15.1111 0.890625 11.9274 0.890625 8.00003C0.890625 4.07267 4.07438 0.888916 8.00174 0.888916C11.9291 0.888916 15.1128 4.07267 15.1128 8.00003Z" stroke="currentColor" strokeWidth="1.06667" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                    {item.time}
-                                 </span>
-                                 {item.guest && (
-                                    <span className="tg-listing-card-duration-guests">
-                                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                          <path d="M14 14C14 12.5 10.5 11 8 11C5.5 11 2 12.5 2 14M11 5C11 6.65685 9.65685 8 8 8C6.34315 8 5 6.65685 5 5C5 3.34315 6.34315 2 8 2C9.65685 2 11 3.34315 11 5Z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                                       </svg>
-                                       {item.guest}
-                                    </span>
-                                 )}
-                                 {/* Departure Date */}
-                                 {item.departure_date && (
-                                    <span className="tg-listing-card-departure-date">
-                                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                          <path d="M15 8L11 4M15 8L11 12M15 8H1M4 2L8 8L4 14" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                                       </svg>
-                                       {item.departure_date}
-                                    </span>
-                                 )}
-                                 {/* Departure Airport */}
-                                 <span className={`tg-listing-card-departure-airport ${!item.departure_airport || item.departure_airport === 'Flights not included' ? 'text-muted' : ''}`}>
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                       <path d="M15 8L11 4M15 8L11 12M15 8H1M4 2L8 8L4 14" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                    {item.departure_airport ? item.departure_airport : "Flight not included"}
-                                 </span>
-                                 {/* Resort/Region */}
-                                 {(item.destinationResort || item.destinationRegion) && (
-                                    <span className="tg-listing-card-resort" style={{
-                                       display: 'block',
-                                       overflow: 'hidden',
-                                       textOverflow: 'ellipsis',
-                                       whiteSpace: 'nowrap'
-                                    }}>
-                                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                          <path d="M8 2L3 6V13H6V10C6 9.46957 6.21071 8.96086 6.58579 8.58579C6.96086 8.21071 7.46957 8 8 8C8.53043 8 9.03914 8.21071 9.41421 8.58579C9.78929 8.96086 10 9.46957 10 10V13H13V6L8 2Z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                                       </svg>
-                                       {item.destinationResort || item.destinationRegion}
-                                    </span>
-                                 )}
-                                 {/* Country */}
+                                 {/* Country - Now at the top */}
                                  {item.destinationCountry && (
-                                    <span className="tg-listing-card-country" style={{
+                                    <span className="tg-listing-card-country mb-10" style={{
                                        display: 'block',
                                        overflow: 'hidden',
                                        textOverflow: 'ellipsis',
-                                       whiteSpace: 'nowrap'
+                                       whiteSpace: 'nowrap',
+                                       fontSize: '14px',
+                                       fontWeight: '600',
+                                       color: '#7c7c7c'
                                     }}>
-                                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginRight: '5px' }}>
                                           <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                                           <path d="M2 8H14" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                                           <path d="M8 2C9.5913 3.73835 10.4783 5.82603 10.5 8C10.4783 10.174 9.5913 12.2616 8 14C6.4087 12.2616 5.52168 10.174 5.5 8C5.52168 5.82603 6.4087 3.73835 8 2Z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -353,30 +308,85 @@ const Listing = () => {
                                        {item.destinationCountry}
                                     </span>
                                  )}
-                              </div>
-                           </div>
-                           <div className="tg-listing-card-price d-flex align-items-end justify-content-between">
-                              <div className="tg-listing-card-price-wrap price-bg d-flex align-items-center">
-                                 <span className="tg-listing-card-currency-amount mr-5">
-                                    {item.delete_price && <del className="tg-listing-card-currency-old">£{Math.round(item.delete_price)}</del>}
-                                    <span className="currency-symbol">£</span>{Math.round(item.price)}
-                                 </span>
-                                 <span className="tg-listing-card-activity-person">/PP</span>
-                              </div>
-                              {/* Agent Avatar */}
-                              {item.agent_avatar && (
-                                 <div className="tg-listing-agent-avatar me-3 mb-2">
-                                    <Image
-                                       className="rounded-circle"
-                                       src={typeof item.agent_avatar === 'string' ? item.agent_avatar : item.agent_avatar}
-                                       alt="agent"
-                                       width={40}
-                                       height={40}
-                                    />
+                                 <h4 className="tg-listing-card-title text-dark" style={{
+                                    display: 'block',
+                                    overflow: 'hidden',
+                                    textOverflow: 'ellipsis',
+                                    whiteSpace: 'nowrap'
+                                 }}>{item.title}</h4>
+                                 <div className="tg-listing-card-duration-tour">
+                                    <span className="tg-listing-card-duration-map mb-5" style={{
+                                       display: 'block',
+                                       overflow: 'hidden',
+                                       textOverflow: 'ellipsis',
+                                       whiteSpace: 'nowrap'
+                                    }}>
+                                       <svg width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <path d="M12.3329 6.7071C12.3329 11.2324 6.55512 15.1111 6.55512 15.1111C6.55512 15.1111 0.777344 11.2324 0.777344 6.7071C0.777344 5.16402 1.38607 3.68414 2.46962 2.59302C3.55316 1.5019 5.02276 0.888916 6.55512 0.888916C8.08748 0.888916 9.55708 1.5019 10.6406 2.59302C11.7242 3.68414 12.3329 5.16402 12.3329 6.7071Z" stroke="currentColor" strokeWidth="1.15556" strokeLinecap="round" strokeLinejoin="round" />
+                                          <path d="M6.55512 8.64649C7.61878 8.64649 8.48105 7.7782 8.48105 6.7071C8.48105 5.636 7.61878 4.7677 6.55512 4.7677C5.49146 4.7677 4.6292 5.636 4.6292 6.7071C4.6292 7.7782 5.49146 8.64649 6.55512 8.64649Z" stroke="currentColor" strokeWidth="1.15556" strokeLinecap="round" strokeLinejoin="round" />
+                                       </svg>
+                                       {item.location}
+                                    </span>
+                                    <span className="tg-listing-card-duration-time">
+                                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <path d="M8.00175 3.73329V7.99996L10.8462 9.42218M15.1128 8.00003C15.1128 11.9274 11.9291 15.1111 8.00174 15.1111C4.07438 15.1111 0.890625 11.9274 0.890625 8.00003C0.890625 4.07267 4.07438 0.888916 8.00174 0.888916C11.9291 0.888916 15.1128 4.07267 15.1128 8.00003Z" stroke="currentColor" strokeWidth="1.06667" strokeLinecap="round" strokeLinejoin="round" />
+                                       </svg>
+                                       {item.time}
+                                    </span>
+                                    {/* Departure Date */}
+                                    {item.departure_date && (
+                                       <span className="tg-listing-card-departure-date">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <path d="M15 8L11 4M15 8L11 12M15 8H1M4 2L8 8L4 14" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                                          </svg>
+                                          {item.departure_date}
+                                       </span>
+                                    )}
+                                    {/* Departure Airport */}
+                                    <span className={`tg-listing-card-departure-airport ${!item.departure_airport || item.departure_airport === 'Flights not included' ? 'text-muted' : ''}`}>
+                                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                          <path d="M15 8L11 4M15 8L11 12M15 8H1M4 2L8 8L4 14" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                                       </svg>
+                                       {item.departure_airport ? item.departure_airport : "Flight not included"}
+                                    </span>
+                                    {/* Resort/Region */}
+                                    {(item.destinationResort || item.destinationRegion) && (
+                                       <span className="tg-listing-card-resort" style={{
+                                          display: 'block',
+                                          overflow: 'hidden',
+                                          textOverflow: 'ellipsis',
+                                          whiteSpace: 'nowrap'
+                                       }}>
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <path d="M8 2L3 6V13H6V10C6 9.46957 6.21071 8.96086 6.58579 8.58579C6.96086 8.21071 7.46957 8 8 8C8.53043 8 9.03914 8.21071 9.41421 8.58579C9.78929 8.96086 10 9.46957 10 10V13H13V6L8 2Z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                                          </svg>
+                                          {item.destinationResort || item.destinationRegion}
+                                       </span>
+                                    )}
                                  </div>
-                              )}
+                              </div>
+                              <div className="tg-listing-card-price d-flex align-items-end justify-content-between">
+                                 <div className="tg-listing-card-price-wrap price-bg d-flex align-items-center">
+                                    <span className="tg-listing-card-currency-amount mr-5">
+                                       {item.delete_price && <del className="tg-listing-card-currency-old">£{Math.round(item.delete_price)}</del>}
+                                       <span className="currency-symbol">£</span>{Math.round(item.price)}
+                                    </span>
+                                    <span className="tg-listing-card-activity-person">/PP</span>
+                                 </div>
+                                 {/* Agent Avatar */}
+                                 {item.agent_avatar && (
+                                    <div className="tg-listing-agent-avatar me-3 mb-2">
+                                       <Image
+                                          className="rounded-circle"
+                                          src={typeof item.agent_avatar === 'string' ? item.agent_avatar : item.agent_avatar}
+                                          alt="agent"
+                                          width={40}
+                                          height={40}
+                                       />
+                                    </div>
+                                 )}
+                              </div>
                            </div>
-                        </div>
                         </Link>
                      </div>
                   ))}
@@ -391,7 +401,7 @@ const Listing = () => {
                            className="tg-btn tg-btn-primary"
                            onClick={handleLoadMore}
                            disabled={loading}
-                           style={{ 
+                           style={{
                               padding: '12px 30px',
                               fontSize: '16px',
                               cursor: loading ? 'not-allowed' : 'pointer',

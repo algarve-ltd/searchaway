@@ -26,7 +26,14 @@ const Banner = () => {
    return (
       <div className="tg-hero-area fix p-relative">
          <div className="tg-hero-top-shadow"></div>
-         <div className="shop-slider-wrapper">
+         <div className="shop-slider-wrapper" style={{ height: '500px', overflow: 'hidden' }}>
+            <style jsx>{`
+               @media (max-width: 991px) {
+                  .shop-slider-wrapper {
+                     height: 750px !important;
+                  }
+               }
+            `}</style>
             <Swiper {...setting} modules={[EffectFade, Autoplay]} className="swiper-container tg-hero-slider-active">
                {banner_thumb.map((thumb, i) => (
                   <SwiperSlide key={i} className="swiper-slide">
@@ -41,17 +48,7 @@ const Banner = () => {
          <div className="tg-hero-content-area">
             <div className="container">
                <div className="p-relative">
-                  <div className="row justify-content-center">
-                     <div className="col-xl-10">
-                        <div className="tg-hero-content text-center">
-                           <div className="tg-hero-title-box mb-10">
-                              <h2 className="tg-hero-title wow fadeInUp" data-wow-delay=".4s" data-wow-duration=".9s">Hand picked holidays</h2>
-                              <p className="tg-hero-para mb-0  wow fadeInUp" data-wow-delay=".6s" data-wow-duration="1.1s">Every holiday on SearchAway is a real quote from an independent UK travel advisor.<br /> Researched, priced, and packaged by a professional</p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-
+                  {/* Content removed - search bar now in header */}
                </div>
             </div>
          </div>

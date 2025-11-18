@@ -45,12 +45,13 @@ const priceRangeOptions: DropdownOption[] = [
 ];
 
 const BannerFormTwo = () => {
-   const { filters, updateFilters, searchQuotes } = useSearch();
+   const { filters, updateFilters, searchQuotes, loading } = useSearch();
 
    const [departureAirportOpen, setDepartureAirportOpen] = useState(false);
    const [destinationModalOpen, setDestinationModalOpen] = useState(false);
    const [nightsOpen, setNightsOpen] = useState(false);
    const [priceOpen, setPriceOpen] = useState(false);
+   const [isSearching, setIsSearching] = useState(false);
 
    const departureAirportRef = useRef<HTMLDivElement>(null);
    const nightsRef = useRef<HTMLDivElement>(null);
@@ -85,7 +86,7 @@ const BannerFormTwo = () => {
       regions: string[];
       resorts: string[];
    }) => {
-      updateFilters({ 
+      updateFilters({
          countries: selections.countries,
          regions: selections.regions,
          resorts: selections.resorts
@@ -112,7 +113,9 @@ const BannerFormTwo = () => {
 
    const handleSearch = async (e: React.FormEvent) => {
       e.preventDefault();
+      setIsSearching(true);
       await searchQuotes();
+      setIsSearching(false);
    };
 
    const getSelectedLabel = (options: DropdownOption[], value: string, placeholder: string) => {
@@ -128,117 +131,168 @@ const BannerFormTwo = () => {
 
    return (
       <>
-      <form onSubmit={handleSearch}>
-         <div className="tg-booking-form-input-group d-flex align-items-end justify-content-between">
-            {/* Departure Airport Dropdown */}
-            <div className="tg-booking-form-parent-inner tg-hero-quantity p-relative mr-15 mb-15">
-               <span className="tg-booking-form-title mb-5">Departure Airport:</span>
-               <div ref={departureAirportRef} onClick={() => setDepartureAirportOpen(!departureAirportOpen)} className={`tg-booking-add-input-field tg-booking-quantity-toggle ${departureAirportOpen ? "active" : ""}`}>
-                  <span className="tg-booking-title-value">{getSelectedLabel(departureAirportOptions, filters.departureAirport, "Select airport...")}</span>
-                  <span className="location">
-                     <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L6 6L11 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                     </svg>
-                  </span>
+         <form onSubmit={handleSearch}>
+            <div className="tg-booking-form-input-group">
+               <style jsx>{`
+               @media (min-width: 992px) {
+                  .fields-row {
+                     flex-wrap: nowrap !important;
+                  }
+                  .field-item {
+                     flex: 1 !important;
+                  }
+               }
+               @media (max-width: 991px) {
+                  .field-item {
+                     flex: 1 1 100% !important;
+                  }
+               }
+            `}</style>
+               {/* Top row with all fields */}
+               <div className="d-flex align-items-end justify-content-between fields-row" style={{ gap: '10px', marginBottom: '10px', flexWrap: 'wrap' }}>
+                  {/* Departure Airport Dropdown */}
+                  <div className="tg-booking-form-parent-inner tg-hero-quantity p-relative field-item" style={{ flex: '1 1 100%', minWidth: '150px' }}>
+                     <span className="tg-booking-form-title mb-5">Departure Airport:</span>
+                     <div ref={departureAirportRef} onClick={() => setDepartureAirportOpen(!departureAirportOpen)} className={`tg-booking-add-input-field tg-booking-quantity-toggle ${departureAirportOpen ? "active" : ""}`}>
+                        <span className="tg-booking-title-value">{getSelectedLabel(departureAirportOptions, filters.departureAirport, "Select airport...")}</span>
+                        <span className="location">
+                           <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M1 1L6 6L11 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                           </svg>
+                        </span>
+                     </div>
+                     <div className={`tg-booking-form-location-list tg-booking-quantity-active ${departureAirportOpen ? "tg-list-open" : ""}`} style={{ overflowX: 'hidden' }}>
+                        <ul className="scrool-bar scrool-height pr-5" style={{ overflowX: 'hidden' }}>
+                           {departureAirportOptions.map((option) => (
+                              <li key={option.value} onClick={() => handleDepartureAirportSelect(option.value)} style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                 <span style={{ whiteSpace: 'nowrap' }}>{option.label}</span>
+                              </li>
+                           ))}
+                        </ul>
+                     </div>
+                  </div>
+
+                  {/* Destination Dropdown */}
+                  <div className="tg-booking-form-parent-inner tg-hero-quantity p-relative field-item" style={{ flex: '1 1 100%', minWidth: '150px' }}>
+                     <span className="tg-booking-form-title mb-5">Destination:</span>
+                     <div onClick={() => setDestinationModalOpen(true)} className="tg-booking-add-input-field tg-booking-quantity-toggle" style={{ cursor: 'pointer' }}>
+                        <span className="tg-booking-title-value">{getDestinationLabel()}</span>
+                        <span className="location">
+                           <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M1 1L6 6L11 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                           </svg>
+                        </span>
+                     </div>
+                  </div>
+
+                  {/* Nights Dropdown */}
+                  <div className="tg-booking-form-parent-inner tg-hero-quantity p-relative field-item" style={{ flex: '1 1 100%', minWidth: '130px' }}>
+                     <span className="tg-booking-form-title mb-5">Nights:</span>
+                     <div ref={nightsRef} onClick={() => setNightsOpen(!nightsOpen)} className={`tg-booking-add-input-field tg-booking-quantity-toggle ${nightsOpen ? "active" : ""}`}>
+                        <span className="tg-booking-title-value">{getSelectedLabel(nightsOptions, filters.nights, "Select nights...")}</span>
+                        <span className="location">
+                           <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M1 1L6 6L11 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                           </svg>
+                        </span>
+                     </div>
+                     <div className={`tg-booking-form-location-list tg-booking-quantity-active ${nightsOpen ? "tg-list-open" : ""}`}>
+                        <ul className="scrool-bar scrool-height pr-5">
+                           {nightsOptions.map((option) => (
+                              <li key={option.value} onClick={() => handleNightsSelect(option.value)}>
+                                 <span>{option.label}</span>
+                              </li>
+                           ))}
+                        </ul>
+                     </div>
+                  </div>
+
+                  {/* Price Range Dropdown */}
+                  <div className="tg-booking-form-parent-inner tg-hero-quantity p-relative field-item" style={{ flex: '1 1 100%', minWidth: '130px' }}>
+                     <span className="tg-booking-form-title mb-5">Price:</span>
+                     <div ref={priceRef} onClick={() => setPriceOpen(!priceOpen)} className={`tg-booking-add-input-field tg-booking-quantity-toggle ${priceOpen ? "active" : ""}`}>
+                        <span className="tg-booking-title-value">{getSelectedLabel(priceRangeOptions, filters.priceRange, "Select price range...")}</span>
+                        <span className="location">
+                           <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M1 1L6 6L11 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                           </svg>
+                        </span>
+                     </div>
+                     <div className={`tg-booking-form-location-list tg-booking-quantity-active ${priceOpen ? "tg-list-open" : ""}`}>
+                        <ul className="scrool-bar scrool-height pr-5">
+                           {priceRangeOptions.map((option) => (
+                              <li key={option.value} onClick={() => handlePriceSelect(option.value)}>
+                                 <span>{option.label}</span>
+                              </li>
+                           ))}
+                        </ul>
+                     </div>
+                  </div>
+
+                  {/* Date Field */}
+                  <div className="tg-booking-form-parent-inner tg-hero-quantity p-relative field-item" style={{ flex: '1 1 100%', minWidth: '150px' }}>
+                     <span className="tg-booking-form-title mb-5">Departure Date:</span>
+                     <div className="tg-booking-add-input-field">
+                        <input
+                           type="date"
+                           value={filters.departureDate || ''}
+                           onChange={(e) => updateFilters({ departureDate: e.target.value })}
+                           style={{
+                              border: 'none',
+                              outline: 'none',
+                              width: '100%',
+                              fontSize: '14px',
+                              color: '#484848',
+                              backgroundColor: 'transparent',
+                              cursor: 'pointer'
+                           }}
+                           placeholder="Select date..."
+                        />
+                     </div>
+                  </div>
                </div>
-               <div className={`tg-booking-form-location-list tg-booking-quantity-active ${departureAirportOpen ? "tg-list-open" : ""}`} style={{ overflowX: 'hidden' }}>
-                  <ul className="scrool-bar scrool-height pr-5" style={{ overflowX: 'hidden' }}>
-                     {departureAirportOptions.map((option) => (
-                        <li key={option.value} onClick={() => handleDepartureAirportSelect(option.value)} style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                           <span style={{ whiteSpace: 'nowrap' }}>{option.label}</span>
-                        </li>
-                     ))}
-                  </ul>
+
+               {/* Search button on second row under departure date */}
+               <div className="d-flex justify-content-center">
+                  <div className="tg-booking-form-search-btn" style={{ width: '200px', minWidth: '200px' }}>
+                     <button className="bk-search-button" type="submit" disabled={isSearching || loading} style={{ whiteSpace: 'nowrap', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                        {isSearching || loading ? (
+                           <>
+                              <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                              <span>Searching...</span>
+                           </>
+                        ) : (
+                           <>
+                              <span>Search</span>
+                              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <g clipPath="url(#clip0_53_103)">
+                                    <path d="M13.2218 13.2222L10.5188 10.5192M12.1959 6.48705C12.1959 9.6402 9.63977 12.1963 6.48662 12.1963C3.33348 12.1963 0.777344 9.6402 0.777344 6.48705C0.777344 3.3339 3.33348 0.777771 6.48662 0.777771C9.63977 0.777771 12.1959 3.3339 12.1959 6.48705Z" stroke="currentColor" strokeWidth="1.575" strokeLinecap="round" strokeLinejoin="round" />
+                                 </g>
+                                 <defs>
+                                    <clipPath id="clip0_53_103">
+                                       <rect width="14" height="14" fill="currentColor" />
+                                    </clipPath>
+                                 </defs>
+                              </svg>
+                           </>
+                        )}
+                     </button>
+                  </div>
                </div>
             </div>
+         </form>
 
-            {/* Destination Dropdown */}
-            <div className="tg-booking-form-parent-inner tg-hero-quantity p-relative mr-15 mb-15">
-               <span className="tg-booking-form-title mb-5">Destination:</span>
-               <div onClick={() => setDestinationModalOpen(true)} className="tg-booking-add-input-field tg-booking-quantity-toggle" style={{ cursor: 'pointer' }}>
-                  <span className="tg-booking-title-value">{getDestinationLabel()}</span>
-                  <span className="location">
-                     <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L6 6L11 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                     </svg>
-                  </span>
-               </div>
-            </div>
-
-            {/* Nights Dropdown */}
-            <div className="tg-booking-form-parent-inner tg-hero-quantity p-relative mr-15 mb-10">
-               <span className="tg-booking-form-title mb-5">Nights:</span>
-               <div ref={nightsRef} onClick={() => setNightsOpen(!nightsOpen)} className={`tg-booking-add-input-field tg-booking-quantity-toggle ${nightsOpen ? "active" : ""}`}>
-                  <span className="tg-booking-title-value">{getSelectedLabel(nightsOptions, filters.nights, "Select nights...")}</span>
-                  <span className="location">
-                     <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L6 6L11 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                     </svg>
-                  </span>
-               </div>
-               <div className={`tg-booking-form-location-list tg-booking-quantity-active ${nightsOpen ? "tg-list-open" : ""}`}>
-                  <ul className="scrool-bar scrool-height pr-5">
-                     {nightsOptions.map((option) => (
-                        <li key={option.value} onClick={() => handleNightsSelect(option.value)}>
-                           <span>{option.label}</span>
-                        </li>
-                     ))}
-                  </ul>
-               </div>
-            </div>
-
-            {/* Price Range Dropdown */}
-            <div className="tg-booking-form-parent-inner tg-hero-quantity p-relative mr-15 mb-15">
-               <span className="tg-booking-form-title mb-5">Price:</span>
-               <div ref={priceRef} onClick={() => setPriceOpen(!priceOpen)} className={`tg-booking-add-input-field tg-booking-quantity-toggle ${priceOpen ? "active" : ""}`}>
-                  <span className="tg-booking-title-value">{getSelectedLabel(priceRangeOptions, filters.priceRange, "Select price range...")}</span>
-                  <span className="location">
-                     <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L6 6L11 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                     </svg>
-                  </span>
-               </div>
-               <div className={`tg-booking-form-location-list tg-booking-quantity-active ${priceOpen ? "tg-list-open" : ""}`}>
-                  <ul className="scrool-bar scrool-height pr-5">
-                     {priceRangeOptions.map((option) => (
-                        <li key={option.value} onClick={() => handlePriceSelect(option.value)}>
-                           <span>{option.label}</span>
-                        </li>
-                     ))}
-                  </ul>
-               </div>
-            </div>
-
-            <div className="tg-booking-form-search-btn mb-10">
-               <button className="bk-search-button" type="submit">Search
-                  <span className="ml-5">
-                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clipPath="url(#clip0_53_103)">
-                           <path d="M13.2218 13.2222L10.5188 10.5192M12.1959 6.48705C12.1959 9.6402 9.63977 12.1963 6.48662 12.1963C3.33348 12.1963 0.777344 9.6402 0.777344 6.48705C0.777344 3.3339 3.33348 0.777771 6.48662 0.777771C9.63977 0.777771 12.1959 3.3339 12.1959 6.48705Z" stroke="currentColor" strokeWidth="1.575" strokeLinecap="round" strokeLinejoin="round" />
-                        </g>
-                        <defs>
-                           <clipPath id="clip0_53_103">
-                              <rect width="14" height="14" fill="currentColor" />
-                           </clipPath>
-                        </defs>
-                     </svg>
-                  </span>
-               </button>
-            </div>
-         </div>
-      </form>
-
-      {/* Destination Selection Modal */}
-      <DestinationModal
-         isOpen={destinationModalOpen}
-         onClose={() => setDestinationModalOpen(false)}
-         onSave={handleDestinationSave}
-         initialSelections={{
-            countries: filters.countries || [],
-            regions: filters.regions || [],
-            resorts: filters.resorts || []
-         }}
-      />
+         {/* Destination Selection Modal */}
+         <DestinationModal
+            isOpen={destinationModalOpen}
+            onClose={() => setDestinationModalOpen(false)}
+            onSave={handleDestinationSave}
+            initialSelections={{
+               countries: filters.countries || [],
+               regions: filters.regions || [],
+               resorts: filters.resorts || []
+            }}
+         />
       </>
    )
 }

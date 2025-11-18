@@ -5,6 +5,7 @@ import { useState } from "react";
 import UseSticky from "@/hooks/UseSticky";
 import Offcanvas from "./Menu/Offcanvas";
 import Sidebar from "./Menu/Sidebar";
+import BannerFormThree from "@/components/common/banner-form/BannerFormThree";
 
 import new_logo from "@/assets/img/logo/logo.png";
 
@@ -22,23 +23,39 @@ const HeaderThree = () => {
                   <div className="row align-items-center">
                      {/* <div className="col-lg-7 col-5"> */}
                      <div className="col-12 d-flex justify-content-center">
-                        <div className="tgmenu__wrap d-flex align-items-center justify-content-center w-100 pt-40 pb-40" style={{ minHeight: '160px' }}>
-                           <div className="logo" style={{ padding: '20px' }}>
+                        <div className="tgmenu__wrap d-flex align-items-center justify-content-center flex-column w-100 pt-40 pb-40" style={{ minHeight: '500px' }}>
+                           <style jsx>{`
+                              @media (max-width: 991px) {
+                                 .tgmenu__wrap {
+                                    min-height: 750px !important;
+                                    padding-top: 0 !important;
+                                 }
+                                 .logo {
+                                    padding-top: 10px !important;
+                                    margin-top: 0 !important;
+                                 }
+                              }
+                           `}</style>
+                           <div className="logo" style={{ padding: '20px', marginBottom: '40px' }}>
                               <Link className="logo-1" href="/">
-                                 <Image 
-                                    src={new_logo} 
-                                    alt="SearchAway Logo" 
+                                 <Image
+                                    src={new_logo}
+                                    alt="SearchAway Logo"
                                     width={300}
                                     height={100}
-                                    style={{ 
-                                       width: '300px', 
+                                    style={{
+                                       width: '300px',
                                        height: 'auto',
                                        maxWidth: '100%'
-                                    }} 
+                                    }}
                                     priority
                                  />
                               </Link>
                               {/* <Link className="logo-2 d-none" href="/"><Image src={logo_2} alt="Logo" /></Link> */}
+                           </div>
+                           {/* Search Bar */}
+                           <div style={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
+                              <BannerFormThree />
                            </div>
                            {/* <nav className="tgmenu__nav tgmenu-1-space ml-180">
                                  <div className="tgmenu__navbar-wrap tgmenu__main-menu d-none d-xl-flex">
