@@ -6,6 +6,7 @@ import store from "@/redux/store";
 import { SearchProvider } from "@/contexts/SearchContext";
 import { Poppins, Outfit } from "next/font/google";
 import { siteConfig } from "@/config/seo";
+import Script from "next/script";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -33,19 +34,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={isDev}>
       <head>
-        {/* Google tag (gtag.js) */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-33ZH3HTDVD"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-33ZH3HTDVD');
-            `,
-          }}
-        />
-        
         {/* Basic Meta Tags */}
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -135,6 +123,20 @@ export default function RootLayout({
         />
       </head>
       <body className={`${poppins.variable} ${outfit.variable}`} suppressHydrationWarning={true}>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-33ZH3HTDVD"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-33ZH3HTDVD');
+          `}
+        </Script>
+        
         <Provider store={store}>
           <SearchProvider>
             {children}
